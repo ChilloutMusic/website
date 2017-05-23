@@ -22,6 +22,10 @@
   color: #00d1b2;
 }
 
+.nav-item.is-brand a:hover, a.nav-item.is-brand:hover {
+  color: #01c9ff;
+}
+
 .hero {
   margin-top: 1px;
 }
