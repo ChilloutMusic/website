@@ -4,6 +4,8 @@ import Home from '../views/Home'
 import Events from '../views/Events'
 import About from '../views/About'
 import Rdj from '../views/Rdj'
+import Rules from '../views/Rules'
+import Bot from '../views/Bot'
 
 Vue.use(Router)
 
@@ -22,6 +24,14 @@ export default new Router({
     {
       path: '/rdj',
       component: Rdj
+    },
+    {
+      path: '/rules',
+      component: Rules
+    },
+    {
+      path: '/bot',
+      component: Bot
     },
     {
       path: '/events',
