@@ -13,3 +13,7 @@ firebase.initializeApp(config)
 export default {
   database: firebase.database()
 }
+
+export const db = firebase.database()
+export const storage = firebase.storage()
+export const auth = firebase.auth()

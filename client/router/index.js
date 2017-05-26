@@ -6,6 +6,7 @@ import About from '../views/About'
 import Rdj from '../views/Rdj'
 import Rules from '../views/Rules'
 import Bot from '../views/Bot'
+import Admin from '../views/Admin'
 
 Vue.use(Router)
 
@@ -36,6 +37,10 @@ export default new Router({
     {
       path: '/events',
       component: Events
+    },
+    {
+      path: '/admin',
+      component: Admin
     }
   ]
 })
