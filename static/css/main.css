@@ -1,3 +1,7 @@
+html {
+  background-color: #f5f5f5;
+}
+
 .nav-with-shadow {
   box-shadow: 1px 1px 5px rgba(100, 100, 100, 0.5);
   z-index: 9999;
@@ -28,10 +32,6 @@
 
 .hero {
   margin-top: 1px;
-}
-
-.hero-body {
-
 }
 
 section {

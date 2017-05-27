@@ -11,9 +11,6 @@ sync(store, router)
 Vue.use(Vuefire)
 
 const app = new Vue({
-  firebase: {
-    rdjs: firebase.database.ref('rdjs').orderByChild('created_at')
-  },
   router,
   store,
   ...App
