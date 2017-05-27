@@ -43,14 +43,24 @@
     <footer class="footer">
       <div class="container">
         <div class="content">
-          <p>Chillout Music &copy; 2014-2017</p>
-          <p style="position: relative; left: -13px;">
-            <a class="facebook" href="https://www.facebook.com/chilloutmusic.fm" target="_blank"><span class="icon is-large"><i class="fa fa-facebook"></i></span></a>
-            <a class="twitter" href="https://www.twitter.com/chilloutmusica" target="_blank"><span class="icon is-large"><i class="fa fa-twitter"></i></span></a>
-            <a class="reddit" href="https://www.reddit.com/r/ChilloutMusic" target="_blank"><span class="icon is-large"><i class="fa fa-reddit"></i></span></a>
-            <a class="youtube" href="https://www.youtube.com/channel/UCfXtga41r3-IiV7Nlm_VvKw?sub_confirmation=1" target="_blank"><span class="icon is-large"><i class="fa fa-youtube"></i></span></a>
-            &nbsp;<a class="soundcloud" href="https://soundcloud.com/chilloutmusica" target="_blank"><span class="icon is-large"><i class="fa fa-soundcloud"></i></span></a>
-          </p>
+          <div class="columns">
+            <div class="column is-3">
+              <p>Chillout Music &copy; 2014-2017</p>
+              <p style="position: relative; left: -13px;">
+                <a class="facebook" href="https://www.facebook.com/chilloutmusic.fm" target="_blank"><span class="icon is-large"><i class="fa fa-facebook"></i></span></a>
+                <a class="twitter" href="https://www.twitter.com/chilloutmusica" target="_blank"><span class="icon is-large"><i class="fa fa-twitter"></i></span></a>
+                <a class="reddit" href="https://www.reddit.com/r/ChilloutMusic" target="_blank"><span class="icon is-large"><i class="fa fa-reddit"></i></span></a>
+                <a class="youtube" href="https://www.youtube.com/channel/UCfXtga41r3-IiV7Nlm_VvKw?sub_confirmation=1" target="_blank"><span class="icon is-large"><i class="fa fa-youtube"></i></span></a>
+                &nbsp;<a class="soundcloud" href="https://soundcloud.com/chilloutmusica" target="_blank"><span class="icon is-large"><i class="fa fa-soundcloud"></i></span></a>
+              </p>
+            </div>
+            <div class="column is-2">
+              <p>Join us on Discord:</p>
+              <a href="https://discord.gg/aXjAgeH" target="_blank">
+                <img src="/img/social-join-discord-2.png" />
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
