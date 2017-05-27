@@ -76,6 +76,7 @@ export default {
 
 <style scoped>
 footer {
+  background-color: #e8e8e8;
   font-family: 'Armata';
   box-shadow: inset 0px 7px 3px -8px rgba(50, 50, 50, 0.75);
 }
