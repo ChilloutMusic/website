@@ -81,7 +81,7 @@ footer {
 }
 
 footer a {
-  color: #CCC;
+  color: #a9a8a8;
 }
 
 footer a.facebook:hover {
