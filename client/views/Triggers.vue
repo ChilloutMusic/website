@@ -17,12 +17,21 @@
     <section class="hero">
       <div class="hero-body">
         <div class="container">
+          <div class="box">
+            <p class="control has-icons-left">
+              <input class="input" type="text" placeholder="Start typing to search a trigger..." value="">
+              <span class="icon is-medium is-left">
+                <i class="fa fa-search"></i>
+              </span>
+            </p>
+          </div>
           <table class="table is-striped">
             <thead>
               <tr>
                 <th class="column-keyword">Trigger</th>
                 <th class="column-content">Content</th>
                 <th class="column-username">Created By</th>
+                <th class="column-usecount">Times Used</th>
               </tr>
             </thead>
             <tbody>
@@ -30,6 +39,7 @@
                 <td>{{ trigger.keyword }}</td>
                 <td>{{ trigger.content }}</td>
                 <td>{{ trigger.creator.username }}</td>
+                <td>{{ trigger.useCount }}</td>
               </tr>
             </tbody>
           </table>
@@ -52,6 +62,12 @@ export default {
     }
   },
 
+  computed: {
+    triggersTotal: function() {
+      return this.triggers.length
+    }
+  },
+
   created() {
     axios.get(`/triggers.json`)
     .then(response => {
@@ -69,12 +85,21 @@ export default {
   background-color: #d3beff;
 }
 
+p.control {
+  width: 25%;
+}
+
 .table {
   table-layout: fixed;
 }
 
 .table td, .table th {
   vertical-align: middle;
+  word-wrap: break-word;
+}
+
+.table thead td, .table thead th {
+  font-family: 'Armata';
 }
 
 .column-trigger {
@@ -82,10 +107,14 @@ export default {
 }
 
 .column-content {
-  width: 60%;
+  width: 55%;
 }
 
 .column-username {
-  width: 20%;
+  width: 15%;
+}
+
+.column-usecount {
+  width: 10%;
 }
 </style>
