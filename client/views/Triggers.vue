@@ -7,7 +7,7 @@
             <div class="column is-one-third">
               <h1 class="title" style="color: #000"><span class="icon is-large"><i class="fa fa-search"></i></span>Triggers</h1>
               <h2 class="subtitle">
-                Instantly search our bot triggers.
+                Instantly search from {{ triggersTotal }} triggers!
               </h2>
             </div>
           </div>
@@ -19,7 +19,7 @@
         <div class="container">
           <div class="box">
             <p class="control has-icons-left">
-              <input class="input" type="text" placeholder="Start typing to search a trigger..." value="">
+              <input class="input" type="text" placeholder="Start typing to search a trigger..." value="" v-model="searchString">
               <span class="icon is-medium is-left">
                 <i class="fa fa-search"></i>
               </span>
@@ -35,7 +35,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr v-for="trigger in triggers">
+              <tr v-for="trigger in filterBy(triggers, searchString)">
                 <td>{{ trigger.keyword }}</td>
                 <td>{{ trigger.content }}</td>
                 <td>{{ trigger.creator.username }}</td>
@@ -51,12 +51,14 @@
 
 <script>
 import axios from 'axios'
+import {filterBy} from '../filters/filters.js'
 
 export default {
   name: 'Triggers',
 
   data () {
     return {
+      searchString: '',
       triggers: [],
       errors: []
     }
@@ -68,6 +70,10 @@ export default {
     }
   },
 
+  methods: {
+    filterBy
+  },
+
   created() {
     axios.get(`/triggers.json`)
     .then(response => {
@@ -76,6 +82,9 @@ export default {
     .catch(e => {
       this.errors.push(e)
     })
+  },
+
+  updated() {
   }
 }
 </script>
@@ -83,6 +92,10 @@ export default {
 <style scoped>
 .page-triggers {
   background-color: #d3beff;
+}
+
+.box {
+  box-shadow: 1px 1px 15px #CCC;
 }
 
 p.control {
