@@ -19,7 +19,7 @@
         <div class="container">
           <div class="box">
             <p class="control has-icons-left">
-              <input class="input" type="text" placeholder="Start typing to search a trigger..." value="" v-model="searchString">
+              <input class="input" id="searchTriggers" type="text" placeholder="Start typing to search a trigger..." value="" v-model="searchString">
               <span class="icon is-medium is-left">
                 <i class="fa fa-search"></i>
               </span>
@@ -82,6 +82,10 @@ export default {
     .catch(e => {
       this.errors.push(e)
     })
+  },
+
+  mounted() {
+    document.getElementById("searchTriggers").focus()
   },
 
   updated() {
