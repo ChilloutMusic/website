@@ -53,7 +53,7 @@ export default {
   },
 
   created() {
-    axios.get(`http://chilloutmusic.fm/triggers.json`)
+    axios.get(`/triggers.json`)
     .then(response => {
       this.triggers = response.data
     })

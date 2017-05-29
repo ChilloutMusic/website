@@ -76,6 +76,12 @@ export default {
 </script>
 
 <style scoped>
+@media screen and (min-width: 1192px) {
+  .nav-left, .nav-right {
+    flex-basis: auto;
+  }
+}
+
 footer {
   background-color: #e8e8e8;
   font-family: 'Armata';
