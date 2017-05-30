@@ -48,8 +48,8 @@
               </tr>
             </tbody>
           </table>
-          <div>
-            <button class="button is-primary is-large is-outlined" @click="showMore">Show More</button>
+          <div v-if="itemsFound > itemsToShow">
+            <button class="button is-primary is-large" @click="showMore">Show More</button>
           </div>
         </div>
       </div>
