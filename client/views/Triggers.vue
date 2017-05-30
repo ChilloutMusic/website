@@ -17,14 +17,19 @@
     <section class="hero">
       <div class="hero-body">
         <div class="container">
+
           <div class="box">
-            <p class="control has-icons-left">
-              <input class="input" id="searchTriggers" type="text" placeholder="Start typing to search a trigger..." value="" v-model="searchString">
-              <span class="icon is-medium is-left">
-                <i class="fa fa-search"></i>
-              </span>
-            </p>
+            <div class="field is-grouped">
+              <p class="control has-icons-left has-icons-right" v-bind:class="{ 'is-loading': isLoading }">
+                <input class="input" id="searchTriggers" type="text" placeholder="Start typing to search a trigger..." value="" v-model="searchString" v-on:keyup="keyMonitor">
+                <span class="icon is-medium is-left">
+                  <i class="fa fa-search"></i>
+                </span>
+              </p>
+              <p v-if="itemsFound != triggersTotal" class="control">Found {{ itemsFound }} triggers.</p>
+            </div>
           </div>
+
           <table class="table is-striped">
             <thead>
               <tr>
@@ -35,7 +40,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr v-for="trigger in filterBy(triggers, searchString)">
+              <tr v-for="trigger in limitBy(filterBy(triggers, searchString))">
                 <td>{{ trigger.keyword }}</td>
                 <td>{{ trigger.content }}</td>
                 <td>{{ trigger.creator.username }}</td>
@@ -43,6 +48,9 @@
               </tr>
             </tbody>
           </table>
+          <div>
+            <button class="button is-primary is-large is-outlined" @click="showMore">Show More</button>
+          </div>
         </div>
       </div>
     </section>
@@ -51,7 +59,6 @@
 
 <script>
 import axios from 'axios'
-import {filterBy} from '../filters/filters.js'
 
 export default {
   name: 'Triggers',
@@ -60,7 +67,10 @@ export default {
     return {
       searchString: '',
       triggers: [],
-      errors: []
+      errors: [],
+      isLoading: true,
+      itemsToShow: 200,
+      itemsFound: 0
     }
   },
 
@@ -71,13 +81,32 @@ export default {
   },
 
   methods: {
-    filterBy
+    filterBy(list, value) {
+      return list.filter(function(item) {
+        const combined = [item.keyword.toLowerCase(), item.creator.username.toLowerCase()].join(' ')
+        return combined.indexOf(value.toLowerCase()) > -1
+      })
+    },
+    limitBy(list) {
+      this.itemsFound = list.length
+      return list.slice(0, this.itemsToShow)
+    },
+    showMore() {
+      this.itemsToShow += 200
+    },
+    keyMonitor() {
+      this.isLoading = true
+      setTimeout(() => this.isLoading = false, 500);
+    }
   },
 
   created() {
     axios.get(`/triggers.json`)
     .then(response => {
       this.triggers = response.data
+    })
+    .then(() => {
+      this.isLoading = false
     })
     .catch(e => {
       this.errors.push(e)
@@ -102,8 +131,16 @@ export default {
   box-shadow: 1px 1px 15px #CCC;
 }
 
+.field.is-grouped {
+  align-items: center;
+}
+
 p.control {
   width: 25%;
+}
+
+p.control img {
+  vertical-align: middle;
 }
 
 .table {
