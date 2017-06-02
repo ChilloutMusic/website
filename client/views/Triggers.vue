@@ -41,9 +41,9 @@
             </thead>
             <tbody>
               <tr v-for="trigger in limitBy(filterBy(triggers, searchString))">
-                <td>{{ trigger.keyword }}</td>
-                <td>{{ trigger.content }}</td>
-                <td>{{ trigger.creator.username }}</td>
+                <td v-html="highlight(trigger.keyword)"></td>
+                <td v-html="highlight(trigger.content)"></td>
+                <td v-html="highlight(trigger.creator.username)"></td>
                 <td>{{ trigger.useCount }}</td>
               </tr>
             </tbody>
@@ -83,7 +83,7 @@ export default {
   methods: {
     filterBy(list, value) {
       return list.filter(function(item) {
-        const combined = [item.keyword.toLowerCase(), item.creator.username.toLowerCase()].join(' ')
+        const combined = [item.keyword.toLowerCase(), item.content.toLowerCase(), item.creator.username.toLowerCase()].join(' ')
         return combined.indexOf(value.toLowerCase()) > -1
       })
     },
@@ -97,6 +97,16 @@ export default {
     keyMonitor() {
       this.isLoading = true
       setTimeout(() => this.isLoading = false, 500);
+    },
+    highlight(value) {
+      if (this.searchString) {
+        var query = new RegExp(this.searchString, "ig");
+        return value.toString().replace(query, function(matchedText, a, b) {
+          return ('<span class=\'search-highlight\'>' + matchedText + '</span>')
+        })
+      } else {
+        return value
+      }
     }
   },
 
