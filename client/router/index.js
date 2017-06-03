@@ -7,6 +7,7 @@ import Rdj from '../views/Rdj'
 import Rules from '../views/Rules'
 import Bot from '../views/Bot'
 import Admin from '../views/Admin'
+import Unknown from '../views/Unknown'
 
 Vue.use(Router)
 
@@ -41,6 +42,10 @@ export default new Router({
     {
       path: '/admin',
       component: Admin
+    },
+    {
+      path: '*',
+      component: Unknown
     }
   ]
 })
