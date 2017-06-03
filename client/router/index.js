@@ -6,6 +6,7 @@ import About from '../views/About'
 import Rdj from '../views/Rdj'
 import Rules from '../views/Rules'
 import Bot from '../views/Bot'
+import Triggers from '../views/Triggers'
 import Admin from '../views/Admin'
 import Unknown from '../views/Unknown'
 
@@ -34,6 +35,10 @@ export default new Router({
     {
       path: '/bot',
       component: Bot
+    },
+    {
+      path: '/triggers',
+      component: Triggers
     },
     {
       path: '/events',

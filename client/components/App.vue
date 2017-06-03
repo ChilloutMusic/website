@@ -24,6 +24,7 @@
             <router-link to="/rdj" exact class="nav-item is-tab">Residents DJs</router-link>
             <router-link to="/rules" exact class="nav-item is-tab">Rules</router-link>
             <router-link to="/bot" exact class="nav-item is-tab">Bot</router-link>
+            <router-link to="/triggers" exact class="nav-item is-tab">Triggers</router-link>
 
             <div class="nav-item">
               <div class="field is-grouped">
@@ -75,6 +76,12 @@ export default {
 </script>
 
 <style scoped>
+@media screen and (min-width: 1192px) {
+  .nav-left, .nav-right {
+    flex-basis: auto;
+  }
+}
+
 footer {
   background-color: #e8e8e8;
   font-family: 'Armata';
