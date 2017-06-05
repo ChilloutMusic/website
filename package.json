@@ -23,10 +23,10 @@
     "axios": "^0.16.1",
     "babel-runtime": "^6.18.0",
     "promise-polyfill": "^6.0.2",
-    "vue": "^2.2.0",
-    "vue-router": "^2.0.0",
-    "vuex": "^2.0.0",
-    "vuex-router-sync": "^4.0.0"
+    "vue": "^2.3.3",
+    "vue-router": "^2.5.3",
+    "vuex": "^2.3.1",
+    "vuex-router-sync": "^4.2.0"
   },
   "devDependencies": {
     "autoprefixer": "^6.4.0",
