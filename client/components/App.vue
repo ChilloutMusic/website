@@ -23,7 +23,7 @@
             <router-link to="/about" exact class="nav-item is-tab">About</router-link>
             <router-link to="/rdj" exact class="nav-item is-tab">Residents DJs</router-link>
             <router-link to="/rules" exact class="nav-item is-tab">Rules</router-link>
-            <router-link to="/bot" exact class="nav-item is-tab">Bot</router-link>
+            <router-link to="/bot" class="nav-item is-tab">Bot</router-link>
             <router-link to="/triggers" exact class="nav-item is-tab">Triggers</router-link>
 
             <div class="nav-item">

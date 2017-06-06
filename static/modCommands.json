@@ -1,0 +1,130 @@
+[
+  {
+    "c": "!announce",
+    "d": "Announce the current song in chat"
+  },
+  {
+    "c": "!atstaff",
+    "d": "Mention all online staff"
+  },
+  {
+    "c": "!front <span class='highlight'>@username</span>",
+    "d": "Move <span class='highlight'>user</span> to position #1"
+  },
+  {
+    "c": "!move <span class='highlight'>@username position</span>",
+    "d": "Move <span class='highlight'>user</span> to <span class='highlight'>position</span>"
+  },
+  {
+    "c": "!skip",
+    "d": "Skip the current song"
+  },
+  {
+    "c": "!skip retry",
+    "d": "Skip the current song and moves dj to position #2"
+  },
+  {
+    "c": "!block <span class='highlight'>@username</span>",
+    "d": "Blocks <span class='highlight'>user</span> from using the bot"
+  },
+  {
+    "c": "!unblock <span class='highlight'>@username</span>",
+    "d": "Unblocks <span class='highlight'>user</span> from using the bot"
+  },
+  {
+    "c": "!mute <span class='highlight'>@username</span>",
+    "d": "Mutes the <span class='highlight'>user</span>"
+  },
+  {
+    "c": "!muted",
+    "d": "Displays a list of muted users"
+  },
+  {
+    "c": "!powerup <span class='highlight'>@username</span>",
+    "d": "Adds <span class='highlight'>user</span> as a poweruser"
+  },
+  {
+    "c": "!powerdown <span class='highlight'>@username</span>",
+    "d": "Removes <span class='highlight'>user</span> as a poweruser"
+  },
+  {
+    "c": "!powerusers",
+    "d": "Displays a list of powerusers"
+  },
+  {
+    "c": "!powercommands",
+    "d": "Displays a list of commands powerusers can use"
+  },
+  {
+    "c": "!dolist",
+    "d": "Displays the bots todo list"
+  },
+  {
+    "c": "!do <span class='highlight'>minutes trigger</span>",
+    "d": "Schedule the bot to do ceterin <span class='highlight'>trigger</span> at a ceterin <span class='highlight'>minute</span>"
+  },
+  {
+    "c": "!wlblock <span class='highlight'>@username</span>",
+    "d": "Blocks the <span class='highlight'>user</span> from joining the waitlist"
+  },
+  {
+    "c": "!wlunblock <span class='highlight'>@username</span>",
+    "d": "Unblocks the <span class='highlight'>user</span> from joining the waitlist"
+  },
+  {
+    "c": "!raffle",
+    "d": "Triggers the game raffle"
+  },
+  {
+    "c": "!rafflecancel",
+    "d": "Cancels the game raffle"
+  },
+  {
+    "c": "!banuser <span class='highlight'>@username</span>",
+    "d": "Permanently bans the <span class='highlight'>user</span>"
+  },
+  {
+    "c": "!banbomb",
+    "d": "Triggers the game banbomb"
+  },
+  {
+    "c": "!mutebomb",
+    "d": "Triggers the game mutebomb"
+  },
+  {
+    "c": "!defusemutebomb",
+    "d": "Defuses the user who has mute bomb on them"
+  },
+  {
+    "c": "!blacklist <span class='highlight'>author</span> - <span class='highlight'>title</span>",
+    "d": "Ban a song from playing"
+  },
+  {
+    "c": "!whitelist <span class='highlight'>author</span> - <span class='highlight'>title</span>",
+    "d": "Unbans a song from playing"
+  },
+  {
+    "c": "!retag <span class='highlight'>author</span> - <span class='highlight'>title</span>",
+    "d": "Retags the current song"
+  },
+  {
+    "c": "!urban <span class='highlight'>term</span>",
+    "d": "Gets results from urban dictionary on that <span class='highlight'>term</span>"
+  },
+  {
+    "c": "!flowtrain",
+    "d": "Starts flow train"
+  },
+  {
+    "c": "!flowtraincancel",
+    "d": "Cancels flow train"
+  },
+  {
+    "c": "!noflow",
+    "d": "Sends a no flow message"
+  },
+  {
+    "c": "!modcommands",
+    "d": "Displays a list of mod commands"
+  }
+]

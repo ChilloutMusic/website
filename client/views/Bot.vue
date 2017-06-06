@@ -45,19 +45,32 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>!plays author - title</td>
-                  <td>Check when the last time a specific song was played, number of times, by whom, and woot/grab/meh count</td>
-                </tr>
-                <tr>
-                  <td>!who @username</td>
-                  <td>Display user DJ history in Chillout Music community</td>
+                <tr v-for="command in userCommands">
+                  <td v-html="command.c"></td>
+                  <td v-html="command.d"></td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <div v-if="tabModActive">mod content</div>
-          <div v-if="tabGamesActive">games content</div>
+          <div v-if="tabModActive">
+            <table class="table is-striped">
+              <thead>
+                <tr>
+                  <th class="column-keyword">Command</th>
+                  <th class="column-content">Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="command in modCommands">
+                  <td v-html="command.c"></td>
+                  <td v-html="command.d"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div v-if="tabGamesActive">
+            <!-- Games content -->
+          </div>
         </div>
       </div>
     </section>
@@ -65,6 +78,8 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   name: 'Bot',
 
@@ -72,7 +87,10 @@ export default {
     return {
       tabUserActive: true,
       tabModActive: false,
-      tabGamesActive: false
+      tabGamesActive: false,
+      userCommands: [],
+      modCommands: [],
+      errors: []
     }
   },
 
@@ -82,18 +100,47 @@ export default {
         this.tabUserActive = true
         this.tabModActive = false
         this.tabGamesActive = false
+        this.$router.replace({name:'bot', params:{type:'user'}});
       }
       if (tab === 'mod') {
         this.tabUserActive = false
         this.tabModActive = true
         this.tabGamesActive = false
+        this.$router.replace({name:'bot', params:{type:'mod'}});
       }
       if (tab === 'games') {
         this.tabUserActive = false
         this.tabModActive = false
         this.tabGamesActive = true
+        this.$router.replace({name:'bot', params:{type:'games'}});
       }
     }
+  },
+
+  created() {
+    if (this.$route.params.type == 'games') {
+      this.toggle('games');
+    } else if (this.$route.params.type == 'mod') {
+      this.toggle('mod');
+    } else if (this.$route.params.type == 'user') {
+      this.toggle('user');
+    } else {
+      this.$router.replace({name:'bot', params:{type:'user'}});
+    }
+    axios.get(`/userCommands.json`)
+    .then(response => {
+      this.userCommands = response.data
+    })
+    .catch(e => {
+      this.errors.push(e)
+    })
+    axios.get(`/modCommands.json`)
+    .then(response => {
+      this.modCommands = response.data
+    })
+    .catch(e => {
+      this.errors.push(e)
+    })
   }
 }
 </script>

@@ -1,0 +1,102 @@
+[
+  {
+    "c": "!plays <span class='highlight'>author</span> - <span class='highlight'>title</span>",
+    "d": "Checks when the song was last played, Total times it has been played, Last played by and the amount of woots/grabs/mehs"
+  },
+  {
+    "c": "!who <span class='highlight'>@username</span>",
+    "d": "Displays how many times the <span class='highlight'>user</span> has played, When the <span class='highlight'>user</span> joined the community and the last song they played"
+  },
+  {
+    "c": "!yesplay",
+    "d": "Displays a list of yes-play genres"
+  },
+  {
+    "c": "!noplay",
+    "d": "Displays a list of no-play genres"
+  },
+  {
+    "c": "!eta",
+    "d": "Estimates wait time to dj"
+  },
+  {
+    "c": "!woots",
+    "d": "Displays songs with the most woots in the last 24 hours"
+  },
+  {
+    "c": "!grabs",
+    "d": "Displays songs with the most grabs in the last 24 hours"
+  },
+  {
+    "c": "!lastplay",
+    "d": "Displays the last played info on current song"
+  },
+  {
+    "c": "!firstplay",
+    "d": "Displays the first played info on current song"
+  },
+  {
+    "c": "!top",
+    "d": "Displays the top songs in the last 24 hours"
+  },
+  {
+    "c": "!songlink",
+    "d": "Displays the link to the current song"
+  },
+  {
+    "c": "!tags <span class='highlight'>author</span> - <span class='highlight'>title</span>",
+    "d": "Displays the genres related to a song"
+  },
+  {
+    "c": "!genre",
+    "d": "Used to settle a heated genre discussion"
+  },
+  {
+    "c": "!triggers",
+    "d": "Displays total amount of triggers and the latest trigger created"
+  },
+  {
+    "c": "!similar",
+    "d": "Displays similar artists to the current one"
+  },
+  {
+    "c": "!swap <span class='highlight'>@username</span>",
+    "d": "Swap waitlist position with another user"
+  },
+  {
+    "c": "!balance",
+    "d": "Check how many ChillCoins(cc) you have"
+  },
+  {
+    "c": "!balance <span class='highlight'>@username</span>",
+    "d": "Check how many ChillCoins(cc) a <span class='highlight'>user</span> has"
+  },
+  {
+    "c": "!transfer <span class='highlight'>amount @username</span>",
+    "d": "Transfers an <span class='highlight'>amount</span> of ChillCoins(cc) to a <span class='highlight'>user</span>"
+  },
+  {
+    "c": "!love <span class='highlight'>@username</span>",
+    "d": "Give love points to the <span class='highlight'>user</span>"
+  },
+  {
+    "c": "!refundlove",
+    "d": "Refunds a love point"
+  },
+  {
+    "c": "!refundlove <span class='highlight'>@username</span>",
+    "d": "Refunds love from the <span class='highlight'>user</span>"
+  },
+  {
+    "c": "!leader",
+    "d": "Displays the user with most loves in last 24 hours"
+  },
+  {
+    "c": "!bot",
+    "d": "Checks to see if the bot is still alive"
+  },
+  {
+    "c": "!commands",
+    "d": "Displays a list of commands"
+  }
+]
