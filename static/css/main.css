@@ -62,7 +62,7 @@ section.motion-background .bg-video video {
   height: auto;
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: calc(50% - 1px);
   transform: translate(-50%, -50%);
 }
 
@@ -135,6 +135,11 @@ section.landing-youtube .subtitle, section.landing-youtube strong {
 
 .search-highlight {
   background-color: yellow;
+}
+
+.highlight {
+  color: #a2a2a2;
+  font-style: italic;
 }
 
 /* SOCIAL */

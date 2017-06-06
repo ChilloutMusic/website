@@ -33,7 +33,8 @@ export default new Router({
       component: Rules
     },
     {
-      path: '/bot',
+      name: 'bot',
+      path: '/bot/:type?',
       component: Bot
     },
     {

@@ -18,7 +18,7 @@
       <div class="hero-body">
         <div class="container">
           <div class="columns">
-            <div class="column is-8">
+            <div class="column is-12">
               <div class="content">
                 <blockquote>
                   <p class="title is-4">How to become a Resident DJ?</p>
@@ -99,7 +99,23 @@ export default {
   font-size: 0.85rem;
 }
 
+.card {
+  -webkit-animation: fadeoutShadow 0.25s linear forwards;
+  animation: fadeoutShadow 0.25s linear forwards;
+}
+
 .card:hover {
-  box-shadow: 1px 15px 15px #CCC;
+  -webkit-animation: fadeinShadow 0.25s linear forwards;
+  animation: fadeinShadow 0.25s linear forwards;
+}
+
+@keyframes fadeoutShadow {
+  0% {box-shadow: 3px 10px 5px rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.1);}
+  100% {box-shadow: 0 2px 3px rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.1);}
+}
+
+@keyframes fadeinShadow {
+  0% {box-shadow: 0 2px 3px rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.1);}
+  100% {box-shadow: 3px 10px 5px rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.1);}
 }
 </style>
