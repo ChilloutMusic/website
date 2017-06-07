@@ -33,16 +33,16 @@
           <table class="table is-striped">
             <thead>
               <tr>
-                <th class="column-keyword">Trigger</th>
+                <th class="pointer column-keyword" @click="toggleSort('keyword')">Trigger<span class="icon is-small" v-if="filterType == 'alp'"><i class="fa fa-level-down"></i></span><span class="icon is-small" v-if="filterType == 'anti-alp'"><i class="	fa fa-level-up"></i></span></th>
                 <th class="column-content">Content</th>
                 <th class="column-username">Created By</th>
-                <th class="column-usecount">Times Used</th>
+                <th class="pointer column-usecount" @click="toggleSort('usecount')">Times Used<span class="icon is-small" v-if="filterType == 'des'"><i class="fa fa-level-down"></i></span><span class="icon is-small" v-if="filterType == 'asc'"><i class="	fa fa-level-up"></i></span></th>
               </tr>
             </thead>
             <tbody>
               <tr v-for="trigger in limitBy(filterBy(triggers, searchString))">
                 <td v-html="highlight(trigger.keyword)"></td>
-                <td v-html="highlight(trigger.content)"></td>
+                <td v-html="emojify(highlight(http(trigger.content)))"></td>
                 <td v-html="highlight(trigger.creator.username)"></td>
                 <td>{{ trigger.useCount }}</td>
               </tr>
@@ -65,6 +65,7 @@ export default {
 
   data () {
     return {
+      filterType: 'alp',
       searchString: '',
       triggers: [],
       errors: [],
@@ -81,6 +82,35 @@ export default {
   },
 
   methods: {
+    toggleSort(type) {
+      if (type == 'keyword') {
+        if (this.filterType == 'alp') {
+          this.filterType = 'anti-alp';
+        } else {
+          this.filterType = 'alp';
+        }
+        this.sortTriggers();
+      } else if (type == 'usecount') {
+        if (this.filterType == 'asc') {
+          this.filterType = 'des';
+        } else {
+          this.filterType = 'asc';
+        }
+        this.sortTriggers();
+      }
+    },
+    sortTriggers() {
+      if (this.filterType == 'alp') {
+        this.triggers.sort(function(a,b) {if(a.keyword < b.keyword){return -1;}else if(a.keyword > b.keyword){return 1;}return 0;});
+      } else if (this.filterType == 'anti-alp') {
+        this.triggers.sort(function(a,b) {if(a.keyword < b.keyword){return -1;}else if(a.keyword > b.keyword){return 1;}return 0;});
+        this.triggers.reverse();
+      } else if (this.filterType == 'asc') {
+        this.triggers.sort(function(a,b) {return a.useCount-b.useCount});
+      } else if (this.filterType == 'des') {
+        this.triggers.sort(function(a,b) {return b.useCount-a.useCount});
+      }
+    },
     filterBy(list, value) {
       return list.filter(function(item) {
         const combined = [item.keyword.toLowerCase(), item.content.toLowerCase(), item.creator.username.toLowerCase()].join(' ')
@@ -100,17 +130,28 @@ export default {
     },
     highlight(value) {
       if (this.searchString) {
-        var query = new RegExp(this.searchString, "ig");
+        var query = new RegExp(this.searchString+'+(?=([^"]*"[^"]*")*[^"]*$)', "ig");
         return value.toString().replace(query, function(matchedText, a, b) {
           return ('<span class=\'search-highlight\'>' + matchedText + '</span>')
         })
       } else {
         return value
       }
+    },
+    http(value) {
+      var query = /(http|ftp|https):\/\/[\w-]+(\.[\w-]+)+([\w.,@?^=%&:\/~+#-]*[\w@?^=%&\/~+#-])?/gi;
+      return value.toString().replace(query, function(matchedText, a, b) {
+        return ('<a target="blank" href="' + matchedText + '">' + matchedText + '</a>')
+      })
+    },
+    emojify(value) {
+      return emojify.replace(value);
     }
   },
 
   created() {
+    emojify.run();
+    emojify.setConfig({img_dir: 'https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/images/basic'})
     axios.get(`/triggers.json`)
     .then(response => {
       this.triggers = response.data
@@ -157,6 +198,10 @@ p.control img {
   table-layout: fixed;
 }
 
+.table th.pointer {
+  cursor: pointer;
+}
+
 .table td, .table th {
   vertical-align: middle;
   word-wrap: break-word;
@@ -175,10 +220,10 @@ p.control img {
 }
 
 .column-username {
-  width: 15%;
+  width: 14.5%;
 }
 
 .column-usecount {
-  width: 10%;
+  width: 10.5%;
 }
 </style>
