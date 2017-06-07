@@ -10,7 +10,7 @@
           </div>
 
           <!-- This "nav-toggle" hamburger menu is only visible on mobile -->
-          <span class="nav-toggle">
+          <span class="nav-toggle" @click="toggleHamburger">
             <span></span>
             <span></span>
             <span></span>
@@ -18,7 +18,7 @@
 
           <!-- This "nav-menu" is hidden on mobile -->
           <!-- Add the modifier "is-active" to display it on mobile -->
-          <div class="nav-right nav-menu">
+          <div class="nav-right nav-menu" v-bind:class="{ 'is-active': isHamburgerActive }" @click="toggleHamburger">
             <router-link to="/" exact class="nav-item is-tab">Home</router-link>
             <router-link to="/about" exact class="nav-item is-tab">About</router-link>
             <router-link to="/rdj" exact class="nav-item is-tab">Residents DJs</router-link>
@@ -71,7 +71,19 @@
 
 <script>
 export default {
-  name: 'app'
+  name: 'app',
+
+  data () {
+    return {
+      isHamburgerActive: false
+    }
+  },
+
+  methods: {
+    toggleHamburger() {
+      this.isHamburgerActive = !this.isHamburgerActive
+    }
+  }
 }
 </script>
 

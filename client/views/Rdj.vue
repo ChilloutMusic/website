@@ -24,7 +24,7 @@
                   <p class="title is-4">How to become a Resident DJ?</p>
                   <ul>
                     <li>For music producers and YouTube promoters only.</li>
-                    <li>You must have music samples on SoundCloud, YouTube, BaseCamp, or a personal website.</li>
+                    <li>You must have music samples on SoundCloud, YouTube, BandCamp, or a personal website.</li>
                     <li>You must be able to demonstrate you play more than just your own music.</li>
                     <li>DJs and Producers: a minimum of 5 tracks/mixes of reasonable quality written within our room's genre requirements.</li>
                     <li>Promoters: 1,000+ followers/subscribers via any medium OR a promising channel with professional graphics, good artist outreach, etc.</li>
@@ -33,12 +33,24 @@
               </div>
             </div>
           </div>
+
+          <p class="control">
+            <span class="select">
+              <select v-model="showType">
+                <option value="all">Show All</option>
+                <option value="producer">Show Producers</option>
+                <option value="promoter">Show Promoters</option>
+              </select>
+            </span>
+          </p>
+          <br />
+
           <div class="columns is-multiline">
-            <div class="column is-2" v-for="rdj in rdjs">
+            <div class="column is-2" v-for="rdj in rdjs" v-if="showType === 'all' ? rdj.type === 'promoter' || rdj.type === 'producer' : rdj.type === showType">
               <a :href="rdj.youtube || rdj.soundcloud" target="_blank">
                 <div class="card">
                   <div class="card-image">
-                    <figure class="image is-200x200">
+                    <figure class="image">
                       <img :src="rdj.imageUrl" alt="Image">
                     </figure>
                   </div>
@@ -65,9 +77,17 @@ import {db} from '../service/firebase'
 
 export default {
   name: 'Rdj',
+
+  data () {
+    return {
+      showType: 'all'
+    }
+  },
+
   firebase: {
     rdjs: db.ref('rdjs')
   },
+
   beforeCreate () {
   }
 }
@@ -76,11 +96,6 @@ export default {
 <style scoped>
 .page-rdj {
   background-color: #bec1ff;
-}
-
-.is-200x200 {
-  width: 100%;
-  height: 200px;
 }
 
 .card-content {
