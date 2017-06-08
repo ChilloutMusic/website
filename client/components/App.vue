@@ -4,9 +4,9 @@
       <div class="container">
         <nav class="nav">
           <div class="nav-left">
-            <a class="nav-item is-brand">
+            <router-link to="/" exact class="nav-item is-brand">
               <img src="/img/cm-logo.svg" alt="Chillout Music" />&nbsp;&nbsp;Chillout Music
-            </a>
+            </router-link>
           </div>
 
           <!-- This "nav-toggle" hamburger menu is only visible on mobile -->
