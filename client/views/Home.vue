@@ -81,3 +81,23 @@ export default {
   name: 'Home'
 }
 </script>
+
+<style scoped>
+@media screen and (max-width: 830px) {
+  .bg-video video {
+    display: none;
+  }
+
+  section.motion-background .bg-video {
+    background-image: url('/img/bg-party.jpg');
+    background-size: cover;
+    background-position: top center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+  }
+
+  section.motion-background .container {
+    padding: 0 1.5rem;
+  }
+}
+</style>
