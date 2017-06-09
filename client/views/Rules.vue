@@ -27,7 +27,6 @@
               <li>Chillout Electronica</li>
               <li>Chillwave</li>
               <li>Chillstep</li>
-              <li>Chill Nu-Disco</li>
               <li>Chillout Trance</li>
               <li>Deep House</li>
               <li>Downtempo</li>
