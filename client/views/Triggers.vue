@@ -33,10 +33,11 @@
           <table class="table is-striped">
             <thead>
               <tr>
-                <th class="pointer column-keyword" @click="toggleSort('keyword')">Trigger<span class="icon is-small" v-if="filterType == 'alp'"><i class="fa fa-level-down"></i></span><span class="icon is-small" v-if="filterType == 'anti-alp'"><i class="	fa fa-level-up"></i></span></th>
+                <th class="clickable column-keyword" @click="toggleSort('keyword')">Trigger<span class="icon is-small" v-if="filterType == 'alp'"><i class="fa fa-level-down"></i></span><span class="icon is-small" v-if="filterType == 'anti-alp'"><i class="	fa fa-level-up"></i></span></th>
                 <th class="column-content">Content</th>
                 <th class="column-username">Created By</th>
-                <th class="pointer column-usecount" @click="toggleSort('usecount')">Times Used<span class="icon is-small" v-if="filterType == 'des'"><i class="fa fa-level-down"></i></span><span class="icon is-small" v-if="filterType == 'asc'"><i class="	fa fa-level-up"></i></span></th>
+                <th class="clickable column-usecount" @click="toggleSort('usecount')">Times Used<span class="icon is-small" v-if="filterType == 'uc-des'"><i class="fa fa-level-down"></i></span><span class="icon is-small" v-if="filterType == 'uc-asc'"><i class="	fa fa-level-up"></i></span></th>
+                <th class="clickable column-created" @click="toggleSort('created')">Created<span class="icon is-small" v-if="filterType == 'c-des'"><i class="fa fa-level-down"></i></span><span class="icon is-small" v-if="filterType == 'c-asc'"><i class="	fa fa-level-up"></i></span></th>
               </tr>
             </thead>
             <tbody>
@@ -45,6 +46,7 @@
                 <td v-html="emojify(highlight(http(trigger.content)))"></td>
                 <td v-html="highlight(trigger.creator.username)"></td>
                 <td>{{ trigger.useCount }}</td>
+                <td>{{ relativeDate(trigger.dateAdded) }}</td>
               </tr>
             </tbody>
           </table>
@@ -89,26 +91,34 @@ export default {
         } else {
           this.filterType = 'alp';
         }
-        this.sortTriggers();
       } else if (type == 'usecount') {
-        if (this.filterType == 'asc') {
-          this.filterType = 'des';
+        if (this.filterType == 'uc-asc') {
+          this.filterType = 'uc-des';
         } else {
-          this.filterType = 'asc';
+          this.filterType = 'uc-asc';
         }
-        this.sortTriggers();
+      } else if (type == 'created') {
+        if (this.filterType == 'c-asc') {
+          this.filterType = 'c-des';
+        } else {
+          this.filterType = 'c-asc';
+        }
       }
+      this.sortTriggers();
     },
     sortTriggers() {
       if (this.filterType == 'alp') {
         this.triggers.sort(function(a,b) {if(a.keyword < b.keyword){return -1;}else if(a.keyword > b.keyword){return 1;}return 0;});
       } else if (this.filterType == 'anti-alp') {
-        this.triggers.sort(function(a,b) {if(a.keyword < b.keyword){return -1;}else if(a.keyword > b.keyword){return 1;}return 0;});
-        this.triggers.reverse();
-      } else if (this.filterType == 'asc') {
+        this.triggers.sort(function(a,b) {if(b.keyword < a.keyword){return -1;}else if(b.keyword > a.keyword){return 1;}return 0;});
+      } else if (this.filterType == 'uc-asc') {
         this.triggers.sort(function(a,b) {return a.useCount-b.useCount});
-      } else if (this.filterType == 'des') {
+      } else if (this.filterType == 'uc-des') {
         this.triggers.sort(function(a,b) {return b.useCount-a.useCount});
+      } else if (this.filterType == 'c-asc') {
+        this.triggers.sort(function(a,b) {return new Date(a.dateAdded).getTime() - new Date(b.dateAdded).getTime()});
+      } else if (this.filterType == 'c-des') {
+        this.triggers.sort(function(a,b) {return new Date(b.dateAdded).getTime() - new Date(a.dateAdded).getTime()});
       }
     },
     filterBy(list, value) {
@@ -130,7 +140,7 @@ export default {
     },
     highlight(value) {
       if (this.searchString) {
-        var query = new RegExp(this.searchString+'+(?=([^"]*"[^"]*")*[^"]*$)', "ig");
+        var query = new RegExp(this.searchString+'(?![^<]*>|[^<>]*<\/)', "ig");
         return value.toString().replace(query, function(matchedText, a, b) {
           return ('<span class=\'search-highlight\'>' + matchedText + '</span>')
         })
@@ -146,6 +156,9 @@ export default {
     },
     emojify(value) {
       return emojify.replace(value);
+    },
+    relativeDate(value) {
+      return relativeDate(new Date(value));
     }
   },
 
@@ -198,8 +211,10 @@ p.control img {
   table-layout: fixed;
 }
 
-.table th.pointer {
+.table th.clickable {
   cursor: pointer;
+  font-weight: bolder;
+  color: #00d1b2;
 }
 
 .table td, .table th {
@@ -211,19 +226,19 @@ p.control img {
   font-family: 'Armata';
 }
 
-.column-trigger {
-  width: 20%;
+.column-created
+.column-usecount
+.column-username
+.column-keyword {
+  width: 12.5%;
 }
 
 .column-content {
-  width: 55%;
+  width: 50%;
+  font-weight: 500;
 }
 
 .column-username {
-  width: 14.5%;
-}
-
-.column-usecount {
-  width: 10.5%;
+  font-weight: 500;
 }
 </style>
