@@ -21,7 +21,7 @@
           <div class="box">
             <div class="field is-grouped">
               <p class="control has-icons-left has-icons-right" v-bind:class="{ 'is-loading': isLoading }">
-                <input class="input" id="searchTriggers" type="text" placeholder="Start typing to search a trigger..." value="" v-model="searchString" v-on:keyup="keyMonitor">
+                <input class="input" id="searchTriggers" type="text" placeholder="Start typing to search a trigger..." value="" @input="debounceSearch" v-on:keyup="keyMonitor">
                 <span class="icon is-medium is-left">
                   <i class="fa fa-search"></i>
                 </span>
@@ -43,7 +43,7 @@
             <tbody>
               <tr v-for="trigger in limitBy(filterBy(triggers, searchString))">
                 <td v-html="highlight(trigger.keyword)"></td>
-                <td v-html="emojify(highlight(http(trigger.content)))"></td>
+                <td v-html="emojify(highlight(linkify(trigger.content)))"></td>
                 <td v-html="highlight(trigger.creator.username)"></td>
                 <td>{{ trigger.useCount }}</td>
                 <td>{{ relativeDate(trigger.dateAdded) }}</td>
@@ -86,6 +86,9 @@ export default {
   },
 
   methods: {
+    debounceSearch: _.debounce(function(e) {
+      this.searchString = e.target.value
+    }, 250),
     sortBy(sortKey) {
       this.reverse = !this.reverse
       this.sortKey = sortKey
@@ -118,7 +121,7 @@ export default {
         return value
       }
     },
-    http(value) {
+    linkify(value) {
       var query = /(http|ftp|https):\/\/[\w-]+(\.[\w-]+)+([\w.,@?^=%&:\/~+#-]*[\w@?^=%&\/~+#-])?/gi;
       return value.toString().replace(query, function(matchedText, a, b) {
         return ('<a target="blank" href="' + matchedText + '">' + matchedText + '</a>')
