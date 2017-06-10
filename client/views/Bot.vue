@@ -148,13 +148,13 @@
             <div class="box">
               <p class="title is-3" style="color: #000"><span class="icon is-large" style="color: #BBB"><i class="fa fa-sort-numeric-desc"></i></span>Raffle</p>
               <p>Raffle, which occurs every 30 minutes, provides a significant Wait List Boost to the winners. If you are already in position #1, you will need to lock your spot by typing <strong>!join</strong>.</p>
-              <p><img src="http://chilloutmusic.fm/img/raffle_01.PNG" /></p>
+              <p><img src="/img/raffle_01.png" /></p>
             </div>
 
             <div class="box">
               <p class="title is-3" style="color: #000"><span class="icon is-large" style="color: orange"><i class="fa fa-question"></i></span>Trivia</p>
               <p>Trivia is a fun game to test your knowledge on various topics, provides a small Wait List Boost. Held every 3 hours. Each correct response will need to be preceded by <strong>!a</strong>.</p>
-              <p><img src="http://chilloutmusic.fm/img/trivia_01.PNG" /></p>
+              <p><img src="/img/trivia_01.png" /></p>
             </div>
           </div>
         </div>
