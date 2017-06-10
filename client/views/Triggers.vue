@@ -140,8 +140,7 @@ export default {
     emojify.setConfig({img_dir: 'https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/images/basic'})
     axios.get(`/triggers.json`)
     .then(response => {
-      this.triggers = response.data
-      this.triggers = _.orderBy(this.triggers, 'dateAdded', 'desc')
+      this.triggers = _.orderBy(response.data, 'dateAdded', 'desc')
     })
     .then(() => {
       this.isLoading = false
