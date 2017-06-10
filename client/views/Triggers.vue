@@ -62,6 +62,7 @@
 <script>
 import axios from 'axios'
 import _ from 'lodash'
+import {relativeDate} from '../filters/relativeDate'
 
 export default {
   name: 'Triggers',
