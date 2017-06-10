@@ -1,0 +1,30 @@
+[
+  {
+    "c": "!love",
+    "d": "Awards the current DJ 1 Point. The user that gave the love receives 0.15 points as an incentive"
+  },
+  {
+    "c": "!love <span class='highlight'>@user</span>",
+    "d": "Awards mentioned <span class='highlight'>user</span> 1 Point. The user that gave the love receives 0.15 points as an incentive"
+  },
+  {
+    "c": "!points",
+    "d": "Displays the amount of points you have accumulated during the period"
+  },
+  {
+    "c": "!points <span class='highlight'>@user</span>",
+    "d": "Displays the amount of points mentioned <span class='highlight'>user</span> has accumulated during the period"
+  },
+  {
+    "c": "!leaders",
+    "d": "Displays the top loved users"
+  },
+  {
+    "c": "!refundlove <span class='highlight'>@user</span>",
+    "d": "Removes the last point you gave to a <span class='highlight'>user</span>"
+  },
+  {
+    "c": "!use boost",
+    "d": "Allows user to use their winning prize"
+  }
+]

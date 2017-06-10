@@ -61,7 +61,7 @@
   },
   {
     "c": "!do <span class='highlight'>minutes trigger</span>",
-    "d": "Schedule the bot to do ceterin <span class='highlight'>trigger</span> at a ceterin <span class='highlight'>minute</span>"
+    "d": "Schedule the bot to do certain <span class='highlight'>trigger</span> at a certain <span class='highlight'>minute</span>"
   },
   {
     "c": "!wlblock <span class='highlight'>@username</span>",

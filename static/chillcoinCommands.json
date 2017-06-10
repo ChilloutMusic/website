@@ -1,0 +1,30 @@
+[
+  {
+    "c": "!balance",
+    "d": "Check your ChillCoin balance"
+  },
+  {
+    "c": "!tip",
+    "d": "Award one (1) ChillCoin to the DJ currently spinning"
+  },
+  {
+    "c": "!buy boost1",
+    "d": "Spend 1 ChillCoin to move up 1 spot"
+  },
+  {
+    "c": "!buy boost3",
+    "d": "Spend 3 ChillCoins to move up 3 spots"
+  },
+  {
+    "c": "!buy boost7",
+    "d": "Spend 5 ChillCoins to move up 7 spots"
+  },
+  {
+    "c": "!buy boost15",
+    "d": "Spend 10 ChillCoins to move up 15 spots"
+  },
+  {
+    "c": "!buy front",
+    "d": "Spend 15 ChillCoins to move up the very front"
+  }
+]

@@ -69,7 +69,93 @@
             </table>
           </div>
           <div v-if="tabGamesActive">
-            <!-- Games content -->
+            <div class="box">
+              <p class="title is-3" style="color: #000"><span class="icon is-large" style="color: green"><i class="fa fa-usd"></i></span>ChillCoin&trade;</p>
+              <p>ChillCoins&trade; is a unique way to reward our users and provides them with a way of showing their appreciation for spinning super dope tracks. The hope is that this feature will elevate room morale and provide users with incentive to help make the community vibe even more chill than it already is (sub-zero?). Some basic rules are as follows: </p>
+              <div class="content">
+                <blockquote>
+                  <ul>
+                    <li>Everyone can earn ChillCoins&trade;</li>
+                    <li>Anyone can give ChillCoins&trade;</li>
+                    <li>Anyone can buy perks with ChillCoins&trade;</li>
+                  </ul>
+                </blockquote>
+                <blockquote>
+                  <ul>
+                    <li><strong>Staff</strong> may award ChillCoins&trade; to anyone:</li>
+                    <li>When awarding non-staff: ChillCoins&trade; come from the bottomless coffers of the Chillout Music Bank.</li>
+                    <li>When awarding other staff members: ChillCoins&trade; come from the tipper's own wallet.</li>
+                  </ul>
+                </blockquote>
+                <blockquote>
+                  <ul>
+                    <li><strong>Non-Staff Users</strong> may use ChillCoins&trade; from their wallet to:</li>
+                    <li>Exchange coins for perks while on the Wait List to move up a space or even all the way to the front.</li>
+                    <li>Tip their homies.</li>
+                    <li>Trade Wait List spot with their homies.</li>
+                  </ul>
+                </blockquote>
+                <table class="table is-striped">
+                  <thead>
+                    <tr>
+                      <th class="column-keyword">Command</th>
+                      <th class="column-content">Description</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr v-for="command in chillcoinCommands">
+                      <td v-html="command.c"></td>
+                      <td v-html="command.d"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="box">
+              <p class="title is-3" style="color: #000"><span class="icon is-large" style="color: red"><i class="fa fa-heart"></i></span>&nbsp;Love</p>
+              <p>Love is a feature where our users can show appreciation to others in the room. Users can send "Points" to other users for any reason they want! After 3 days, a winner is declared and will benefit from a Wait List Boost. We hope that this brings the community closer in a interactive and fun way.</p>
+              <table class="table is-striped">
+                <thead>
+                  <tr>
+                    <th class="column-keyword">Command</th>
+                    <th class="column-content">Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr v-for="command in loveCommands">
+                    <td v-html="command.c"></td>
+                    <td v-html="command.d"></td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="content">
+                <blockquote>
+                  <ul>
+                    <li><strong>Rewards:</strong></li>
+                    <li>!love = 0.15 point for source user, 1 for target user</li>
+                    <li>!tip = 0.50 for source non-staff user, 1 point for non-staff target user</li>
+                    <li>grabs = 0.25 points for each grab, minimum 3 grabs</li>
+                    <li>raffle = 1 point for winner</li>
+                    <li>trivia = 1 point for winner</li>
+                    <li>One prize (every 3 days): Wait List Boost, which pushes the user 2 thirds of the way up the waitlist.</li>
+                    <li>* Users can accumulate boost and use it at their time of choosing.</li>
+                  </ul>
+                </blockquote>
+              </div>
+            </div>
+
+            <div class="box">
+              <p class="title is-3" style="color: #000"><span class="icon is-large" style="color: #BBB"><i class="fa fa-sort-numeric-desc"></i></span>Raffle</p>
+              <p>Raffle, which occurs every 30 minutes, provides a significant Wait List Boost to the winners. If you are already in position #1, you will need to lock your spot by typing <strong>!join</strong>.</p>
+              <p><img src="http://chilloutmusic.fm/img/raffle_01.PNG" /></p>
+            </div>
+
+            <div class="box">
+              <p class="title is-3" style="color: #000"><span class="icon is-large" style="color: orange"><i class="fa fa-question"></i></span>Trivia</p>
+              <p>Trivia is a fun game to test your knowledge on various topics, provides a small Wait List Boost. Held every 3 hours. Each correct response will need to be preceded by <strong>!a</strong>.</p>
+              <p><img src="http://chilloutmusic.fm/img/trivia_01.PNG" /></p>
+            </div>
           </div>
         </div>
       </div>
@@ -90,6 +176,8 @@ export default {
       tabGamesActive: false,
       userCommands: [],
       modCommands: [],
+      chillcoinCommands: [],
+      loveCommands: [],
       errors: []
     }
   },
@@ -141,6 +229,20 @@ export default {
     .catch(e => {
       this.errors.push(e)
     })
+    axios.get(`/chillcoinCommands.json`)
+    .then(response => {
+      this.chillcoinCommands = response.data
+    })
+    .catch(e => {
+      this.errors.push(e)
+    })
+    axios.get(`/loveCommands.json`)
+    .then(response => {
+      this.loveCommands = response.data
+    })
+    .catch(e => {
+      this.errors.push(e)
+    })
   }
 }
 </script>
@@ -156,5 +258,19 @@ export default {
 
 .tabs ul {
   font-family: 'Armata';
+}
+
+.content {
+  margin-top: 10px;
+}
+
+.content ul {
+  margin-top: 0;
+}
+
+img {
+  padding: 5px;
+  box-shadow: 5px 5px 5px #CCC;
+  margin-top: 10px;
 }
 </style>
