@@ -22,7 +22,7 @@
 
               <h1 class="title" style="color: #000"><span class="icon is-large"><i class="fa fa-calendar"></i></span>Weekly Events</h1>
               <h2 class="subtitle">
-                We host a themed party on every Sunday! We pick one or two specific types of music to play. Queue up your favorite tunes and earn ChillCoins&trade; when your plays are on theme.<br/><br/><br/>
+                We host a themed party on every Sunday! We pick one or two specific types of music to play. Queue up your favorite tunes and earn <router-link to="/bot/games">ChillCoins&trade;</router-link> when your plays are on theme.<br/><br/><br/>
               </h2>
             </div>
             <div class="column">
