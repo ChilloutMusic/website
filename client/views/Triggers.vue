@@ -7,7 +7,7 @@
             <div class="column is-one-third">
               <h1 class="title" style="color: #000"><span class="icon is-large"><i class="fa fa-search"></i></span>Triggers</h1>
               <h2 class="subtitle">
-                Instantly search from {{ triggersTotal }} triggers!
+                Instantly search from <strong>{{ triggersTotal }}</strong> triggers!
               </h2>
             </div>
           </div>
@@ -33,11 +33,11 @@
           <table class="table is-striped">
             <thead>
               <tr>
-                <th class="clickable column-keyword" @click="toggleSort('keyword')">Trigger<span class="icon is-small" v-if="filterType == 'alp'"><i class="fa fa-level-down"></i></span><span class="icon is-small" v-if="filterType == 'anti-alp'"><i class="	fa fa-level-up"></i></span></th>
+                <th class="clickable column-keyword" @click="sortBy('keyword')">Trigger<span class="icon is-small" v-if="sortKey =='keyword'"><i class="fa" v-bind:class="reverse ? 'fa-level-down' : 'fa-level-up'"></i></span></th>
                 <th class="column-content">Content</th>
                 <th class="column-username">Created By</th>
-                <th class="clickable column-usecount" @click="toggleSort('usecount')">Times Used<span class="icon is-small" v-if="filterType == 'uc-des'"><i class="fa fa-level-down"></i></span><span class="icon is-small" v-if="filterType == 'uc-asc'"><i class="	fa fa-level-up"></i></span></th>
-                <th class="clickable column-created" @click="toggleSort('created')">Created<span class="icon is-small" v-if="filterType == 'c-des'"><i class="fa fa-level-down"></i></span><span class="icon is-small" v-if="filterType == 'c-asc'"><i class="	fa fa-level-up"></i></span></th>
+                <th class="clickable column-usecount" @click="sortBy('useCount')">Times Used<span class="icon is-small" v-if="sortKey =='useCount'"><i class="fa" v-bind:class="reverse ? 'fa-level-down' : 'fa-level-up'"></i></span></th>
+                <th class="clickable column-created" @click="sortBy('dateAdded')">Created<span class="icon is-small" v-if="sortKey =='dateAdded'"><i class="fa" v-bind:class="reverse ? 'fa-level-down' : 'fa-level-up'"></i></span></th>
               </tr>
             </thead>
             <tbody>
@@ -61,13 +61,15 @@
 
 <script>
 import axios from 'axios'
+import _ from 'lodash'
 
 export default {
   name: 'Triggers',
 
   data () {
     return {
-      filterType: 'alp',
+      sortKey: 'dateAdded',
+      reverse: true,
       searchString: '',
       triggers: [],
       errors: [],
@@ -84,42 +86,10 @@ export default {
   },
 
   methods: {
-    toggleSort(type) {
-      if (type == 'keyword') {
-        if (this.filterType == 'alp') {
-          this.filterType = 'anti-alp';
-        } else {
-          this.filterType = 'alp';
-        }
-      } else if (type == 'usecount') {
-        if (this.filterType == 'uc-asc') {
-          this.filterType = 'uc-des';
-        } else {
-          this.filterType = 'uc-asc';
-        }
-      } else if (type == 'created') {
-        if (this.filterType == 'c-asc') {
-          this.filterType = 'c-des';
-        } else {
-          this.filterType = 'c-asc';
-        }
-      }
-      this.sortTriggers();
-    },
-    sortTriggers() {
-      if (this.filterType == 'alp') {
-        this.triggers.sort(function(a,b) {if(a.keyword < b.keyword){return -1;}else if(a.keyword > b.keyword){return 1;}return 0;});
-      } else if (this.filterType == 'anti-alp') {
-        this.triggers.sort(function(a,b) {if(b.keyword < a.keyword){return -1;}else if(b.keyword > a.keyword){return 1;}return 0;});
-      } else if (this.filterType == 'uc-asc') {
-        this.triggers.sort(function(a,b) {return a.useCount-b.useCount});
-      } else if (this.filterType == 'uc-des') {
-        this.triggers.sort(function(a,b) {return b.useCount-a.useCount});
-      } else if (this.filterType == 'c-asc') {
-        this.triggers.sort(function(a,b) {return new Date(a.dateAdded).getTime() - new Date(b.dateAdded).getTime()});
-      } else if (this.filterType == 'c-des') {
-        this.triggers.sort(function(a,b) {return new Date(b.dateAdded).getTime() - new Date(a.dateAdded).getTime()});
-      }
+    sortBy(sortKey) {
+      this.reverse = !this.reverse
+      this.sortKey = sortKey
+      this.triggers = _.orderBy(this.triggers, sortKey, this.reverse ? 'desc' : 'asc')
     },
     filterBy(list, value) {
       return list.filter(function(item) {
@@ -168,6 +138,7 @@ export default {
     axios.get(`/triggers.json`)
     .then(response => {
       this.triggers = response.data
+      this.triggers = _.orderBy(this.triggers, 'dateAdded', 'desc')
     })
     .then(() => {
       this.isLoading = false
