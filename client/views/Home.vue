@@ -42,13 +42,13 @@
           </h2>
           <div class="columns">
             <div class="column">
-              <img src="../img/event-1.jpg" />
+              <img src="/img/events/ComingSoon.jpg" />
             </div>
             <div class="column">
-              <img src="../img/event-2.jpg" />
+              <img src="/img/events/episode19.png" />
             </div>
             <div class="column">
-              <img src="../img/event-3.jpg" />
+              <img src="/img/events/episode18.jpg" />
             </div>
           </div>
           <br /><br />
@@ -63,11 +63,11 @@
             <div class="column is-half">
               <h1 class="title" style="color: orange;"><span class="icon is-large"><i class="fa fa-youtube"></i></span>Our YouTube Channel</h1>
               <h2 class="subtitle">
-                The best of chillout music curated and featured by <strong>Sound by Molly</strong>. <br/>
+                The best of chillout music curated and featured by our very own <strong>Molly</strong>.<br/>
               </h2>
             </div>
             <div class="column">
-              <div class="embed-container"><iframe src="https://www.youtube.com/embed/ptQ9PFN60m0" frameborder="0" allowfullscreen></iframe></div>
+              <div class="embed-container"><iframe src="https://www.youtube.com/embed/SkuPaZQXt7g" frameborder="0" allowfullscreen></iframe></div>
             </div>
           </div>
         </div>
