@@ -52,6 +52,9 @@ export default new Router({
     {
       path: '*',
       component: Unknown
-    }
+    },
+    { path: '/bot-commands', redirect: '/bot' },
+    { path: '/games', redirect: '/bot/games' },
+    { path: '/residentdjs', redirect: '/rdj' }
   ]
 })
