@@ -94,8 +94,14 @@ export default {
   }
 }
 
+@media screen and (max-width: 768px) {
+  footer img {
+    max-width: 50%;
+  }
+}
+
 footer {
-  background-color: #e8e8e8;
+  background-image: url('/img/texturetastic_gray.png');
   font-family: 'Armata';
   box-shadow: inset 0px 7px 3px -8px rgba(50, 50, 50, 0.75);
 }
@@ -123,4 +129,6 @@ footer a.youtube:hover {
 footer a.soundcloud:hover {
   color: #ff7700;
 }
+
+
 </style>
