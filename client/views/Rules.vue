@@ -112,7 +112,7 @@
             <blockquote class="user-guidelines">
               <h1 class="title is-4" style="color: #000"><span class="icon is-medium"><i class="fa fa-list"></i></span>&nbsp;Chat:</h1>
               <ul>
-                <li>We use the following Plug.dj plugins: RCS or Plug³.</li>
+                <li>We use the following Plug.dj plugins: <a href="https://rcs.radiant.dj/" target="_blank">RCS</a> or <a href="https://plugcubed.net/" target="_blank">Plug³</a>.</li>
                 <li>Producers and promoters may self-advertise with SoundCloud or YouTube links. </li>
                 <li>We love to party; however, we permanent ban trolls, spammers, and those who disrespect the DJs, listeners and staff.</li>
                 <li>Stay active in chat. Send us some funny and interesting images or hit some bot triggers!</li>

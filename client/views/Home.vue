@@ -2,7 +2,7 @@
   <div>
     <section class="motion-background">
       <div class="bg-video">
-        <video autoplay loop>
+        <video autoplay loop muted>
           <source src="/video/motion-bg-party.mp4" type="video/mp4" />
         </video>
       </div>
