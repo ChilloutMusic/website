@@ -24,258 +24,23 @@
             </blockquote>
           </div>
           <div class="columns is-multiline">
-            <div class="column is-3">
+            <div v-for="user in staff" :class="user.cardSize">
               <div class="card">
                 <div class="card-image">
-                  <figure class="image is-4by3">
-                    <img src="/img/classic07b.png" alt="Image">
+                  <figure :class="user.imageSize">
+                    <img :src="user.image" alt="Image">
                   </figure>
                 </div>
                 <div class="card-content">
                   <div class="media">
                     <div class="media-content">
-                      <p class="title is-4">Molly</p>
-                      <p class="subtitle is-6">Host</p>
+                      <p class="title is-4">{{user.username}}</p>
+                      <p class="subtitle is-6">{{user.role}}</p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-
-            <div class="column is-3">
-              <div class="card">
-                <div class="card-image">
-                  <figure class="image is-4by3">
-                    <img src="/img/warrior07b.png" alt="Image">
-                  </figure>
-                </div>
-                <div class="card-content">
-                  <div class="media">
-                    <div class="media-content">
-                      <p class="title is-4">Lizz-E</p>
-                      <p class="subtitle is-6">Co-Host</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="column is-3">
-              <div class="card">
-                <div class="card-image">
-                  <figure class="image is-4by3">
-                    <img src="/img/diner-e02b.png" alt="Image">
-                  </figure>
-                </div>
-                <div class="card-content">
-                  <div class="media">
-                    <div class="media-content">
-                      <p class="title is-4">Kris</p>
-                      <p class="subtitle is-6">Co-Host</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="column is-3">
-              <div class="card">
-                <div class="card-image">
-                  <figure class="image is-4by3">
-                    <img src="/img/robot07b.png" alt="Image">
-                  </figure>
-                </div>
-                <div class="card-content">
-                  <div class="media">
-                    <div class="media-content">
-                      <p class="title is-4">Cerebral Parsley</p>
-                      <p class="subtitle is-6">Co-Host</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="column is-2">
-              <div class="card">
-                <div class="card-image">
-                  <figure class="image">
-                    <img src="/img/robot15b.png" alt="Image">
-                  </figure>
-                </div>
-                <div class="card-content">
-                  <div class="media">
-                    <div class="media-content">
-                      <p class="title is-5">CaptainAnderz</p>
-                      <p class="subtitle is-6">Manager</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="column is-2">
-              <div class="card">
-                <div class="card-image">
-                  <figure class="image">
-                    <img src="/img/base13b.png" alt="Image">
-                  </figure>
-                </div>
-                <div class="card-content">
-                  <div class="media">
-                    <div class="media-content">
-                      <p class="title is-5">DnbJohnny</p>
-                      <p class="subtitle is-6">Manager</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="column is-2">
-              <div class="card">
-                <div class="card-image">
-                  <figure class="image">
-                    <img src="/img/robot01b.png" alt="Image">
-                  </figure>
-                </div>
-                <div class="card-content">
-                  <div class="media">
-                    <div class="media-content">
-                      <p class="title is-5">FishToast</p>
-                      <p class="subtitle is-6">Manager</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="column is-2">
-              <div class="card">
-                <div class="card-image">
-                  <figure class="image">
-                    <img src="/img/robot02b.png" alt="Image">
-                  </figure>
-                </div>
-                <div class="card-content">
-                  <div class="media">
-                    <div class="media-content">
-                      <p class="title is-5">Georgeo</p>
-                      <p class="subtitle is-6">Manager</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="column is-2">
-              <div class="card">
-                <div class="card-image">
-                  <figure class="image">
-                    <img src="/img/robot01b.png" alt="Image">
-                  </figure>
-                </div>
-                <div class="card-content">
-                  <div class="media">
-                    <div class="media-content">
-                      <p class="title is-5">Golden Bot</p>
-                      <p class="subtitle is-6">Manager</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="column is-2">
-              <div class="card">
-                <div class="card-image">
-                  <figure class="image">
-                    <img src="/img/sea-t02b.png" alt="Image">
-                  </figure>
-                </div>
-                <div class="card-content">
-                  <div class="media">
-                    <div class="media-content">
-                      <p class="title is-5">karmakazemonk</p>
-                      <p class="subtitle is-6">Manager</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="column is-2">
-              <div class="card">
-                <div class="card-image">
-                  <figure class="image">
-                    <img src="/img/dragonp04b.png" alt="Image">
-                  </figure>
-                </div>
-                <div class="card-content">
-                  <div class="media">
-                    <div class="media-content">
-                      <p class="title is-5">Mitch</p>
-                      <p class="subtitle is-6">Manager</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="column is-2">
-              <div class="card">
-                <div class="card-image">
-                  <figure class="image">
-                    <img src="/img/zoo13b.png" alt="Image">
-                  </figure>
-                </div>
-                <div class="card-content">
-                  <div class="media">
-                    <div class="media-content">
-                      <p class="title is-5">Powdered Toast Man</p>
-                      <p class="subtitle is-6">Manager</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="column is-2">
-              <div class="card">
-                <div class="card-image">
-                  <figure class="image">
-                    <img src="/img/warrior09b.png" alt="Image">
-                  </figure>
-                </div>
-                <div class="card-content">
-                  <div class="media">
-                    <div class="media-content">
-                      <p class="title is-5">Sexy Cherry</p>
-                      <p class="subtitle is-6">Manager</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="column is-2">
-              <div class="card">
-                <div class="card-image">
-                  <figure class="image">
-                    <img src="/img/beach-s07b.png" alt="Image">
-                  </figure>
-                </div>
-                <div class="card-content">
-                  <div class="media">
-                    <div class="media-content">
-                      <p class="title is-5">ChilloutRoomba</p>
-                      <p class="subtitle is-6">Bot</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
           </div>
         </div>
       </div>
@@ -284,8 +49,24 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
-  name: 'About'
+  name: 'About',
+  data() {
+    return {
+      staff: [],
+      errors: []
+    }
+  },
+  created() {
+    axios.get(`/staff.json`)
+    .then(response => {
+      this.staff = response.data
+    })
+    .catch(e => {
+      this.errors.push(e)
+    })
+  }
 }
 </script>
 
