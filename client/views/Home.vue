@@ -111,7 +111,7 @@ export default {
   name: 'Home',
   data() {
     return {
-      playing: null,
+      playing: [],
       played: [],
       errors: []
     }
