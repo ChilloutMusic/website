@@ -222,6 +222,17 @@ export default {
             vm.rdj.imageUrl = task.snapshot.downloadURL
             rdjRef.push(vm.rdj)
             vm.message = vm.rdj.name + " added successfully."
+
+            // Update metadata properties
+            let newMetadata = {
+              cacheControl: 'public,max-age=15768000',
+              contentType: 'image/jpeg'
+            }
+            storageRef.updateMetadata(newMetadata).then(function(metadata) {
+              console.log("Metadata added successfully.")
+            }).catch(function(error) {
+              vm.error = 'Metadata update failed!'
+            });
           });
         }
       });
