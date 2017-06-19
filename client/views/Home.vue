@@ -7,10 +7,7 @@
         </video>
       </div>
       <div class="container">
-        <h1 class="title text-on-motion"><span style="color: #FFF;">Plug.dj</span> is a place to play music and videos with friends and others from around the world in a fun, real-time, community-driven environment.</h1>
-        <h2 class="subtitle subtitle-motion text-on-motion">
-          Join our community - <span style="border-bottom: 2px solid #FFF;">Chillout Music</span> - put together the perfect chill playlist, make new friends, and then take turns playing chill music and videos. Whoever DJs before you might inspire your next song, and you can discuss musical influences in our live chat. If you discover a new track that you like, you can Woot to show your appreciation or Grab it to add to your playlists. Pick an avatar that fits your personality, and you're ready to make new friends and listen to music! Chillout Music promotes & hosts events for chill music producers on plug.dj.
-        </h2>
+        <h1 class="title text-on-motion"><span style="color: #FFF;">Chillout Music</span> is a Plug.dj community &mdash; a place to play music and videos with friends and others from around the world in a fun, real-time, community-driven environment.</h1>
       </div>
     </section>
 
@@ -254,6 +251,12 @@ section.landing-youtube .yt {
 
   section.motion-background .container {
     padding: 0 1.5rem;
+  }
+}
+
+@media screen and (min-width: 831px) {
+  .title.text-on-motion {
+    width: 75%;
   }
 }
 </style>
