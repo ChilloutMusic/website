@@ -121,7 +121,7 @@
               <h1 class="title is-4" style="color: #000"><span class="icon is-medium"><i class="fa fa-music"></i></span>&nbsp;DJ:</h1>
               <ul>
                 <li>Please listen to a few songs before you DJ, so you get an idea of the room vibe.</li>
-                <li>When in doubt, you can ask a moderator to preview a track by posting a YouTube or SoundClound link.</li>
+                <li>When in doubt, you can ask a moderator to preview a track by posting a YouTube or SoundCloud link.</li>
                 <li>Staff or the Bot will skip off-genre and off-theme plays.</li>
                 <li>Producers are encouraged to play their own songs, but please do not be obsessive and overplay them.</li>
                 <li>We encourage flow in order to keep the mood of the room steady.</li>
