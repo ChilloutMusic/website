@@ -95,7 +95,7 @@ export default {
 
 <style scoped>
 .page-rdj {
-  background-color: #bec1ff;
+  background-image: linear-gradient( 135deg, #CE9FFC 0%, #7367F0 100%);
 }
 
 .card-content {

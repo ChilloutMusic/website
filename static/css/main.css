@@ -23,10 +23,15 @@ html {
 }
 
 .nav-item a:hover, a.nav-item:hover {
-  color: #00d1b2;
+  color: #01c9ff;
 }
 
 .nav-item.is-brand a:hover, a.nav-item.is-brand:hover {
+  color: #01c9ff;
+}
+
+.nav-item a.is-tab.is-active, a.nav-item.is-tab.is-active {
+  border-bottom: 3px solid #01c9ff;
   color: #01c9ff;
 }
 

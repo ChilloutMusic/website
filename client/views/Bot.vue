@@ -249,7 +249,7 @@ export default {
 
 <style scoped>
 .page-bot {
-  background-color: #bed9ff;
+  background-image: linear-gradient( 135deg, #ABDCFF 0%, #0396FF 100%);
 }
 
 .hero .tabs ul {

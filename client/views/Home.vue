@@ -3,7 +3,7 @@
     <section class="motion-background">
       <div class="bg-video">
         <video autoplay loop muted>
-          <source src="/video/motion-bg-party.mp4" type="video/mp4" />
+          <source src="/video/motion-bg-particles-4.mp4" type="video/mp4" />
         </video>
       </div>
       <div class="container">

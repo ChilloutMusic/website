@@ -160,7 +160,7 @@ export default {
 
 <style scoped>
 .page-rules {
-  background-color: #ffe7be;
+  background-image: linear-gradient( 135deg, #FDEB71 0%, #f8aa00 100%);
 }
 
 .box li {

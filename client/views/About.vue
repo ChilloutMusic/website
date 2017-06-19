@@ -6,7 +6,7 @@
           <div class="columns">
             <div class="column is-one-third">
               <h1 class="title" style="color: #000"><span class="icon is-large"><i class="fa fa-id-card-o"></i></span>&nbsp;About</h1>
-              <h2 class="subtitle">
+              <h2 class="subtitle" style="color: #000">
                 Meet the people behind Chillout Music.
               </h2>
             </div>
@@ -72,7 +72,7 @@ export default {
 
 <style scoped>
 .page-about {
-  background-color: #beffe7;
+  background-image: linear-gradient( 135deg, #43CBFF 0%, #9708CC 100%);
 }
 
 .image.is-4by3 img {

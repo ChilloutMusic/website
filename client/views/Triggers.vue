@@ -162,7 +162,7 @@ export default {
 
 <style scoped>
 .page-triggers {
-  background-color: #d3beff;
+  background-image: linear-gradient( 135deg, #90F7EC 0%, #32CCBC 100%);
 }
 
 .box {

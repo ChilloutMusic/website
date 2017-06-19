@@ -100,6 +100,14 @@ export default {
   }
 }
 
+.button.is-primary {
+  background-color: #01c9ff;
+}
+
+.button.is-primary.is-hovered, .button.is-primary:hover {
+  background-color: #00a7e2;
+}
+
 footer {
   background-color: #e8e8e8;
   font-family: 'Armata';
