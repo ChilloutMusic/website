@@ -4,125 +4,97 @@
     "role": "Host",
     "location": "United States",
     "image": "/img/classic07b.png",
-    "imageSize": "image is-4by3",
-    "usernameSize": "title is-4",
-    "cardSize": "column is-3"
+    "sizeSmall": false
   },
   {
     "username": "Lizz-E",
     "role": "Co-Host",
     "location": "United States",
     "image": "/img/warrior07b.png",
-    "imageSize": "image is-4by3",
-    "usernameSize": "title is-4",
-    "cardSize": "column is-3"
+    "sizeSmall": false
   },
   {
     "username": "Kris",
     "role": "Co-Host",
     "location": "Denmark",
     "image": "/img/diner-e02b.png",
-    "imageSize": "image is-4by3",
-    "usernameSize": "title is-4",
-    "cardSize": "column is-3"
+    "sizeSmall": false
   },
   {
     "username": "Braincomb",
     "role": "Co-Host",
     "location": "United States",
     "image": "/img/robot07b.png",
-    "imageSize": "image is-4by3",
-    "usernameSize": "title is-4",
-    "cardSize": "column is-3"
+    "sizeSmall": false
   },
   {
     "username": "CaptainAnderz",
     "role": "Manager",
     "location": "Denmark",
     "image": "/img/robot15b.png",
-    "imageSize": "image",
-    "usernameSize": "title is-5",
-    "cardSize": "column is-2"
+    "sizeSmall": true
   },
   {
     "username": "Mitch",
     "role": "Manager",
     "location": "New Zealand",
     "image": "/img/dragonp04b.png",
-    "imageSize": "image",
-    "usernameSize": "title is-5",
-    "cardSize": "column is-2"
+    "sizeSmall": true
   },
   {
     "username": "DnbJohnny",
     "role": "Manager",
     "location": "Canada",
     "image": "/img/base13b.png",
-    "imageSize": "image",
-    "usernameSize": "title is-5",
-    "cardSize": "column is-2"
+    "sizeSmall": true
   },
   {
     "username": "FishToast",
     "role": "Manager",
     "location": "North Africa",
     "image": "/img/robot01b.png",
-    "imageSize": "image",
-    "usernameSize": "title is-5",
-    "cardSize": "column is-2"
+    "sizeSmall": true
   },
   {
     "username": "Georgeo",
     "role": "Manager",
     "location": "England",
     "image": "/img/robot02b.png",
-    "imageSize": "image",
-    "usernameSize": "title is-5",
-    "cardSize": "column is-2"
+    "sizeSmall": true
   },
   {
     "username": "Golden Bot",
     "role": "Manager",
     "location": "Poland",
     "image": "/img/robotp02b.png",
-    "imageSize": "image",
-    "usernameSize": "title is-5",
-    "cardSize": "column is-2"
+    "sizeSmall": true
   },
   {
     "username": "karmakazemonk",
     "role": "Manager",
     "location": "United States",
     "image": "/img/sea-t02b.png",
-    "imageSize": "image",
-    "usernameSize": "title is-5",
-    "cardSize": "column is-2"
+    "sizeSmall": true
   },
   {
     "username": "Powdered Toast Man",
     "role": "Manager",
     "location": "United States",
     "image": "/img/zoo13b.png",
-    "imageSize": "image",
-    "usernameSize": "title is-5",
-    "cardSize": "column is-2"
+    "sizeSmall": true
   },
   {
     "username": "Sexy Cherry",
     "role": "Manager",
     "location": "Lithuania",
     "image": "/img/warrior09b.png",
-    "imageSize": "image",
-    "usernameSize": "title is-5",
-    "cardSize": "column is-2"
+    "sizeSmall": true
   },
   {
     "username": "ChilloutRoomba",
     "role": "Bot",
     "location": "The Cloud",
     "image": "/img/beach-s07b.png",
-    "imageSize": "image",
-    "usernameSize": "title is-5",
-    "cardSize": "column is-2"
+    "sizeSmall": true
   }
 ]

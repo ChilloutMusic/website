@@ -25,17 +25,17 @@
             </blockquote>
           </div>
           <div class="columns is-multiline">
-            <div v-for="user in staff" :class="user.cardSize">
+            <div v-for="user in staff" :class="user.sizeSmall ? 'column is-2' : 'column is-3'">
               <div class="card">
                 <div class="card-image">
-                  <figure :class="user.imageSize">
+                  <figure :class="user.sizeSmall ? 'image' : 'image is-4by3'">
                     <img :src="user.image" alt="Image">
                   </figure>
                 </div>
                 <div class="card-content">
                   <div class="media">
                     <div class="media-content">
-                      <p :class="user.usernameSize">{{user.username}}</p>
+                      <p :class="user.sizeSmall ? 'title is-5' : 'column is-4'">{{user.username}}</p>
                       <p class="subtitle is-6">{{user.role}}</p>
                       <p class="subtitle is-6">{{user.location}}</p>
                     </div>
