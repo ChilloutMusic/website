@@ -30,19 +30,20 @@
               <li>Chillout Trance</li>
               <li>Deep House</li>
               <li>Downtempo</li>
-              <li>Future Beats</li>
               <li>Dub</li>
               <li>Funk</li>
               <li>Future Garage</li>
               <li>Indian Chill</li>
               <li>Instrumental</li>
               <li>Jazzy Lounge</li>
+              <li>Lofi</li>
               <li>Lounge</li>
               <li>Liquid DnB</li>
               <li>Atmospheric DnB</li>
               <li>Microhouse</li>
               <li>Nu-Jazz</li>
               <li>Melodic Progressive</li>
+              <li>Psychill</li>
               <li>Psybient</li>
               <li>Space Music</li>
               <li>Trip Hop</li>
@@ -105,6 +106,7 @@
               <li>Trap</li>
               <li>Tropical House</li>
               <li>Witch House</li>
+              <li>Video Game Music</li>
             </ul>
           </div>
           <h1 class="title" style="color: #000"><span class="icon is-large"><i class="fa fa-legal" style="color: orange"></i></span>User Guidelines:</h1>
