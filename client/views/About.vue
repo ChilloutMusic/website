@@ -35,8 +35,9 @@
                 <div class="card-content">
                   <div class="media">
                     <div class="media-content">
-                      <p class="title is-4">{{user.username}}</p>
+                      <p :class="user.usernameSize">{{user.username}}</p>
                       <p class="subtitle is-6">{{user.role}}</p>
+                      <p class="subtitle is-6">{{user.location}}</p>
                     </div>
                   </div>
                 </div>
@@ -84,7 +85,12 @@ export default {
   transform: translate(-50%, -50%);
 }
 
-.subtitle:not(:last-child), .title:not(:last-child) {
-  margin-bottom: 1.0rem;
+.title {
+  margin-bottom: 1.25rem;
 }
+
+.subtitle {
+  margin-bottom: 0rem;
+}
+
 </style>

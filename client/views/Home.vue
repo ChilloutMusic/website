@@ -48,7 +48,7 @@
             </div>
             <div class="column is-half" style="padding-bottom: 5rem;">
               <div class="yt">
-                <h1 class="title" style="color: orange;"><span class="icon is-large"><i class="fa fa-youtube"></i></span>Our YouTube Channel</h1>
+                <h1 class="title" style="color: orange;"><span class="icon is-large"><i class="fa fa-youtube"></i></span>&nbsp;Our YouTube Channel</h1>
                 <h2 class="subtitle">The best of chillout music curated and featured by our very own <strong>Molly</strong>.<br/></h2>
               </div>
               <div class="embed-container"><iframe src="https://www.youtube.com/embed/SkuPaZQXt7g" frameborder="0" allowfullscreen></iframe></div>
