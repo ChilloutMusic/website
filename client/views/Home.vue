@@ -15,7 +15,7 @@
       <div class="hero-body">
         <div class="container">
           <div class="columns">
-            <div class="column" style="padding-right:50px;">
+            <div class="column" style="padding-right:50px;" v-if="playing">
               <div class="currentSong">
                 <h1 class="title" style="color: orange;">
                   <div class="equaliser-container">

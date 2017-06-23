@@ -35,7 +35,7 @@
                 <div class="card-content">
                   <div class="media">
                     <div class="media-content">
-                      <p :class="user.sizeSmall ? 'title is-5' : 'column is-4'">{{user.username}}</p>
+                      <p :class="user.sizeSmall ? 'title is-5' : 'title is-4'">{{user.username}}</p>
                       <p class="subtitle is-6">{{user.role}}</p>
                       <p class="subtitle is-6">{{user.location}}</p>
                     </div>
