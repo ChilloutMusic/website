@@ -2,7 +2,6 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '../views/Home'
 import Events from '../views/Events'
-import About from '../views/About'
 import Rdj from '../views/Rdj'
 import Rules from '../views/Rules'
 import Bot from '../views/Bot'
@@ -19,10 +18,6 @@ export default new Router({
     {
       path: '/',
       component: Home
-    },
-    {
-      path: '/about',
-      component: About
     },
     {
       path: '/rdj',

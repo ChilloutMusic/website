@@ -33,7 +33,7 @@
                     <span class="icon is-small"><i class="fa fa-external-link"></i></span>
                   </a>
                 </h2>
-                <div class="wasPlaying" v-for="play in played" style="padding-bottom: 0.85rem;">
+                <div class="wasPlaying" v-for="play in played" v-if="!isMobile" style="padding-bottom: 0.85rem;">
                   <h1 style="color:orange;font-size: 1rem;"><strong style="color:orange;">{{play.dj}}</strong> played
                     <div class="score" style="float:right;">
                       <span style="color: #90ad2f;"><span class="icon is-small"><i class="fa fa-arrow-up"></i></span>{{play.score.woots}}</span>
@@ -108,12 +108,17 @@ export default {
   name: 'Home',
   data() {
     return {
+      isMobile: false,
       playing: [],
       played: [],
       errors: []
     }
   },
   created() {
+    if (document.body.clientWidth <= 768) {
+      this.isMobile = true;
+    }
+
     axios.get(`https://mitchdev.net/cm/playing`)
     .then(response => {
       this.playing = response.data.current
@@ -236,7 +241,7 @@ section.landing-youtube .yt {
   100% {height: 2px;}
 }
 
-@media screen and (max-width: 830px) {
+@media screen and (max-width: 768px) {
   .bg-video video {
     display: none;
   }
@@ -254,7 +259,7 @@ section.landing-youtube .yt {
   }
 }
 
-@media screen and (min-width: 831px) {
+@media screen and (min-width: 769px) {
   .title.text-on-motion {
     width: 75%;
   }

@@ -20,7 +20,6 @@
           <!-- Add the modifier "is-active" to display it on mobile -->
           <div class="nav-right nav-menu" v-bind:class="{ 'is-active': isHamburgerActive }" @click="toggleHamburger">
             <router-link to="/" exact class="nav-item is-tab">Home</router-link>
-            <router-link to="/about" exact class="nav-item is-tab">About</router-link>
             <router-link to="/rdj" exact class="nav-item is-tab">Residents DJs</router-link>
             <router-link to="/rules" exact class="nav-item is-tab">Rules</router-link>
             <router-link to="/bot" class="nav-item is-tab">Bot</router-link>

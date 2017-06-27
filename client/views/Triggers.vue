@@ -26,7 +26,7 @@
                   <i class="fa fa-search"></i>
                 </span>
               </p>
-              <p v-if="itemsFound != triggersTotal" class="control">Found {{ itemsFound }} triggers.</p>
+              <p v-if="itemsFound != triggersTotal" class="control found">Found {{ itemsFound }} triggers.</p>
             </div>
           </div>
 
@@ -35,18 +35,18 @@
               <tr>
                 <th class="clickable column-keyword" @click="sortBy('keyword')">Trigger<span class="icon is-small" v-if="sortKey =='keyword'"><i class="fa" v-bind:class="reverse ? 'fa-level-down' : 'fa-level-up'"></i></span></th>
                 <th class="column-content">Content</th>
-                <th class="column-username">Created By</th>
-                <th class="clickable column-usecount" @click="sortBy('useCount')">Times Used<span class="icon is-small" v-if="sortKey =='useCount'"><i class="fa" v-bind:class="reverse ? 'fa-level-down' : 'fa-level-up'"></i></span></th>
-                <th class="clickable column-created" @click="sortBy('dateAdded')">Created<span class="icon is-small" v-if="sortKey =='dateAdded'"><i class="fa" v-bind:class="reverse ? 'fa-level-down' : 'fa-level-up'"></i></span></th>
+                <th v-if="!isMobile" class="column-username">Created By</th>
+                <th v-if="!isMobile" class="clickable column-usecount" @click="sortBy('useCount')">Times Used<span class="icon is-small" v-if="sortKey =='useCount'"><i class="fa" v-bind:class="reverse ? 'fa-level-down' : 'fa-level-up'"></i></span></th>
+                <th v-if="!isMobile" class="clickable column-created" @click="sortBy('dateAdded')">Created<span class="icon is-small" v-if="sortKey =='dateAdded'"><i class="fa" v-bind:class="reverse ? 'fa-level-down' : 'fa-level-up'"></i></span></th>
               </tr>
             </thead>
             <tbody>
               <tr v-for="trigger in limitBy(filterBy(triggers, searchString))">
                 <td v-html="highlight(trigger.keyword)"></td>
                 <td v-html="emojify(highlight(linkify(trigger.content)))"></td>
-                <td v-html="highlight(trigger.creator.username)"></td>
-                <td>{{ trigger.useCount }}</td>
-                <td>{{ relativeDate(trigger.dateAdded) }}</td>
+                <td v-if="!isMobile" v-html="highlight(trigger.creator.username)"></td>
+                <td v-if="!isMobile">{{ trigger.useCount }}</td>
+                <td v-if="!isMobile">{{ relativeDate(trigger.dateAdded) }}</td>
               </tr>
             </tbody>
           </table>
@@ -75,6 +75,7 @@ export default {
       triggers: [],
       errors: [],
       isLoading: true,
+      isMobile: false,
       itemsToShow: 200,
       itemsFound: 0
     }
@@ -137,11 +138,21 @@ export default {
   },
 
   created() {
+    if (document.body.clientWidth <= 920) {
+      this.isMobile = true;
+    }
+
     emojify.run();
     emojify.setConfig({img_dir: 'https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/images/basic'})
     axios.get(`/triggers.json`)
     .then(response => {
-      this.triggers = _.orderBy(response.data, 'dateAdded', 'desc')
+      if (this.isMobile) {
+        this.sortKey = 'keyword';
+        this.reverse = false;
+        this.triggers = _.orderBy(response.data, 'keyword', 'asc')
+      } else {
+        this.triggers = _.orderBy(response.data, 'dateAdded', 'desc')
+      }
     })
     .then(() => {
       this.isLoading = false
@@ -214,5 +225,17 @@ p.control img {
 
 .column-username {
   font-weight: 500;
+}
+
+@media screen and (max-width: 920px) {
+  p.control {
+    width: 100%;
+  }
+  .field.is-grouped {
+    display: block;
+  }
+  .found {
+    margin-top: 1rem;
+  }
 }
 </style>

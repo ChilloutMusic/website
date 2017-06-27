@@ -133,4 +133,15 @@ export default {
   0% {box-shadow: 0 2px 3px rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.1);}
   100% {box-shadow: 3px 10px 5px rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.1);}
 }
+
+@media screen and (max-width: 768px) {
+  .column.is-2 {
+    width: 50%;
+    margin: 0rem;
+    display: inline-block;
+  }
+  .subtitle.location {
+    font-size: 0.75rem;
+  }
+}
 </style>
