@@ -23,7 +23,6 @@
               <li>Ambient</li>
               <li>Acid Jazz</li>
               <li>Chillhop</li>
-              <li>Chill Trap</li>
               <li>Chillout Electronica</li>
               <li>Chillwave</li>
               <li>Chillstep</li>
@@ -127,7 +126,7 @@
                 <li>Staff or the Bot will skip off-genre and off-theme plays.</li>
                 <li>Producers are encouraged to play their own songs, but please do not be obsessive and overplay them.</li>
                 <li>We encourage flow in order to keep the mood of the room steady.</li>
-                <li>For unban, unmute or waitlist unblock: Please contact us on Discord or message the room host.</li>
+                <li>For unban, unmute or waitlist unblock: Please contact us on Discord or message any of the room mods.</li>
               </ul>
               <h1 class="title is-4" style="color: #000"><span class="icon is-medium"><i class="fa fa-angle-double-up"></i></span>&nbsp;How to become a moderator:</h1>
               <ul>
