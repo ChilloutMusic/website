@@ -144,14 +144,15 @@ export default {
 
     emojify.run();
     emojify.setConfig({img_dir: 'https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/images/basic'})
-    axios.get(`/triggers.json`)
+    axios.get(`https://api.woots.io/the-chillout-room/triggers`)
     .then(response => {
       if (this.isMobile) {
         this.sortKey = 'keyword';
         this.reverse = false;
-        this.triggers = _.orderBy(response.data, 'keyword', 'asc')
+        this.triggers = _.orderBy(response.data.triggers, 'keyword', 'asc')
       } else {
-        this.triggers = _.orderBy(response.data, 'dateAdded', 'desc')
+        console.log(response.data)
+        this.triggers = _.orderBy(response.data.triggers, 'dateAdded', 'desc')
       }
     })
     .then(() => {
