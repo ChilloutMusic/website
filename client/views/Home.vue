@@ -88,7 +88,7 @@
               <img src="/img/events/ComingSoon.jpg" />
             </div>
             <div class="column">
-              <img src="/img/events/episode19.png" />
+              <img src="/img/events/episode19.jpg" />
             </div>
             <div class="column">
               <img src="/img/events/episode18.jpg" />
