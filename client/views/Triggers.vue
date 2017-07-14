@@ -6,7 +6,7 @@
           <div class="columns">
             <div class="column is-one-third">
               <h1 class="title" style="color: #000"><span class="icon is-large"><i class="fa fa-search"></i></span>Triggers</h1>
-              <h2 class="subtitle">
+              <h2 class="subtitle" v-if="triggersTotal != 0">
                 Instantly search from <strong>{{ triggersTotal }}</strong> triggers!
               </h2>
             </div>
@@ -149,9 +149,8 @@ export default {
       if (this.isMobile) {
         this.sortKey = 'keyword';
         this.reverse = false;
-        this.triggers = _.orderBy(response.data.triggers, 'keyword', 'asc')
+        this.triggers = _.orderBy(response.data.triggers, 'dateAdded', 'desc')
       } else {
-        console.log(response.data)
         this.triggers = _.orderBy(response.data.triggers, 'dateAdded', 'desc')
       }
     })

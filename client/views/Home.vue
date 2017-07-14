@@ -3,7 +3,7 @@
     <section class="motion-background">
       <div class="bg-video">
         <video autoplay loop muted>
-          <source src="/video/bg-particles-4.webm" type="video/webm" />
+          <source src="/video/bg-particles-blue.webm" type="video/webm" />
         </video>
       </div>
       <div class="container">
@@ -51,7 +51,7 @@
                 <h1 class="title" style="color: orange;"><span class="icon is-large"><i class="fa fa-youtube"></i></span>&nbsp;Our YouTube Channel</h1>
                 <h2 class="subtitle">The best of chillout music curated and featured by our very own <strong>Molly</strong>.<br/></h2>
               </div>
-              <div class="embed-container"><iframe src="https://www.youtube.com/embed/SkuPaZQXt7g" frameborder="0" allowfullscreen></iframe></div>
+              <div class="embed-container"><iframe src="https://www.youtube.com/embed/SQKG9mqsWgs" frameborder="0" allowfullscreen></iframe></div>
             </div>
           </div>
         </div>
