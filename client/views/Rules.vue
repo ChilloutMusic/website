@@ -53,8 +53,7 @@
           <div class="content">
             <blockquote>
               <ul>
-                <li>Vocals are welcome! (Light rap samples are allowed)</li>
-                <li>All tracks containing heavy vocals are subject to evaluation and may be skipped.</li>
+                <li>All tracks containing heavy or prolonged vocals are subject to evaluation and may be skipped.</li>
                 <li>Check room history before playing. Over-played tracks will be skipped.</li>
                 <li>Search play history with the bot command: <span>!plays author - title</span></li>
                 <li>Keep all tracks under 8 minutes.</li>
