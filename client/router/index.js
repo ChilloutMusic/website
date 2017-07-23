@@ -50,6 +50,7 @@ export default new Router({
     },
     { path: '/bot-commands', redirect: '/bot' },
     { path: '/games', redirect: '/bot/games' },
+    { path: '/leaderboard', redirect: '/bot/leaderboard' },
     { path: '/residentdjs', redirect: '/rdj' }
   ]
 })

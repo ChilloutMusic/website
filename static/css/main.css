@@ -87,7 +87,7 @@ section::before {
   transition: ease all .2s;
   top: 0;
   transform-origin: left top;
-  /*transform: skewY(-2deg);*/
+  transform: skewY(-2deg);
 }
 
 .page-header {

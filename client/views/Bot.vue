@@ -34,6 +34,11 @@
                   <span>Games</span>
                 </a>
               </li>
+              <li @click="toggle('leaderboard')" v-bind:class="{ 'is-active': tabLeaderboardActive }">
+                <a>
+                  <span>Leaderboard</span>
+                </a>
+              </li>
             </ul>
           </div>
           <div v-if="tabUserActive">
@@ -114,7 +119,7 @@
 
             <div class="box">
               <p class="title is-3" style="color: #000"><span class="icon is-large" style="color: red"><i class="fa fa-heart"></i></span>&nbsp;Love</p>
-              <p>Love is a feature where our users can show appreciation to others in the room. Users can send "Points" to other users for any reason they want! After 3 days, a winner is declared and will benefit from a Wait List Boost. We hope that this brings the community closer in a interactive and fun way.</p>
+              <p>Love is a feature where our users can show appreciation to others in the room. Users can send "Points" to other users for any reason they want! After 3 days, a winner is declared and will benefit from a Wait List Boost. We hope that this brings the community closer in a interactive and fun way. Check the <a @click="toggle('leaderboard')">leaderboard here!</a></p>
               <table class="table is-striped">
                 <thead>
                   <tr>
@@ -157,6 +162,29 @@
               <p><img src="/img/trivia_01.png" /></p>
             </div>
           </div>
+          <div v-if="tabLeaderboardActive">
+            <div class="box">
+              <p class="title is-3" style="color: #000"><span class="icon is-large" style="color: red"><i class="fa fa-heart"></i></span>&nbsp;Leaderboard</p>
+              <p>Leaderboard has been reset <strong>{{ leaderboard.started }}</strong> and will end <strong>{{ leaderboard.ends }}</strong>. Watch this space if you win and collect your free boost!</p>
+              <br/>
+              <table class="table is-striped">
+                <thead>
+                  <tr>
+                    <th class="column-keyword">Username</th>
+                    <th class="column-content">Points</th>
+                    <th class="column-content">Lovers</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr v-for="participant in leaderboard.participants">
+                    <td v-html="participant.username"></td>
+                    <td v-html="participant.points_received"></td>
+                    <td><span v-for="award in participant.awards_received">{{ award.username }} ({{award.points_sent}}) </span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -174,10 +202,12 @@ export default {
       tabUserActive: true,
       tabModActive: false,
       tabGamesActive: false,
+      tabLeaderboardActive: false,
       userCommands: [],
       modCommands: [],
       chillcoinCommands: [],
       loveCommands: [],
+      leaderboard: [],
       errors: []
     }
   },
@@ -188,25 +218,37 @@ export default {
         this.tabUserActive = true
         this.tabModActive = false
         this.tabGamesActive = false
+        this.tabLeaderboardActive = false
         this.$router.replace({name:'bot', params:{type:'user'}});
       }
       if (tab === 'mod') {
         this.tabUserActive = false
         this.tabModActive = true
         this.tabGamesActive = false
+        this.tabLeaderboardActive = false
         this.$router.replace({name:'bot', params:{type:'mod'}});
       }
       if (tab === 'games') {
         this.tabUserActive = false
         this.tabModActive = false
         this.tabGamesActive = true
+        this.tabLeaderboardActive = false
         this.$router.replace({name:'bot', params:{type:'games'}});
+      }
+      if (tab === 'leaderboard') {
+        this.tabUserActive = false
+        this.tabModActive = false
+        this.tabGamesActive = false
+        this.tabLeaderboardActive = true
+        this.$router.replace({name:'bot', params:{type:'leaderboard'}});
       }
     }
   },
 
   created() {
-    if (this.$route.params.type == 'games') {
+    if (this.$route.params.type == 'leaderboard') {
+      this.toggle('leaderboard');
+    } else if (this.$route.params.type == 'games') {
       this.toggle('games');
     } else if (this.$route.params.type == 'mod') {
       this.toggle('mod');
@@ -232,6 +274,10 @@ export default {
     axios.get(`/chillcoinCommands.json`)
     .then(response => {
       this.chillcoinCommands = response.data
+    })
+    axios.get(`https://api.woots.io/the-chillout-room/leaderboard`)
+    .then(response => {
+      this.leaderboard = response.data
     })
     .catch(e => {
       this.errors.push(e)
