@@ -119,7 +119,7 @@ export default {
       this.isMobile = true;
     }
 
-    axios.get(`https://mitchdev.net/cm/playing`)
+    axios.get(`https://braincomb.com/cm/playing.json`)
     .then(response => {
       this.playing = response.data.current
       this.played = response.data.played
