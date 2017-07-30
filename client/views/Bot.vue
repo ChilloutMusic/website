@@ -119,7 +119,7 @@
 
             <div class="box">
               <p class="title is-3" style="color: #000"><span class="icon is-large" style="color: red"><i class="fa fa-heart"></i></span>&nbsp;Love</p>
-              <p>Love is a feature where our users can show appreciation to others in the room. Users can send "Points" to other users for any reason they want! After 3 days, a winner is declared and will benefit from a Wait List Boost. We hope that this brings the community closer in a interactive and fun way. Check the <a @click="toggle('leaderboard')">leaderboard here!</a></p>
+              <p>Love is a feature where our users can show appreciation to others in the room. Users can send "Points" to other users for any reason they want! After a day, a winner is declared and will benefit from a Wait List Boost and free ChillCoins. We hope that this brings the community closer in a interactive and fun way. Check the <a @click="toggle('leaderboard')">leaderboard here!</a></p>
               <table class="table is-striped">
                 <thead>
                   <tr>
@@ -143,7 +143,7 @@
                     <li>grabs = 0.25 points for each grab, minimum 3 grabs</li>
                     <li>raffle = 1 point for winner</li>
                     <li>trivia = 1 point for winner</li>
-                    <li>One prize (every 3 days): Wait List Boost, which pushes the user 2 thirds of the way up the waitlist.</li>
+                    <li>One prize (every 24 hours): Wait List Boost, which pushes the user 2 thirds of the way up the waitlist and 3 ChillCoins.</li>
                     <li>* Users can accumulate boost and use it at their time of choosing.</li>
                   </ul>
                 </blockquote>
@@ -165,7 +165,7 @@
           <div v-if="tabLeaderboardActive">
             <div class="box">
               <p class="title is-3" style="color: #000"><span class="icon is-large" style="color: red"><i class="fa fa-heart"></i></span>&nbsp;Leaderboard</p>
-              <p>Leaderboard has been reset <strong>{{ leaderboard.started }}</strong> and will end <strong>{{ leaderboard.ends }}</strong>. Watch this space if you win and collect your free boost!</p>
+              <p>Leaderboard has been reset <strong>{{ leaderboard.started }}</strong> and will end <strong>{{ leaderboard.ends }}</strong>. Watch this space! Winners can type <strong>!use boost</strong> in our Plug.dj room to use the free boost and get free ChillCoins.</p>
               <br/>
               <table class="table is-striped">
                 <thead>
