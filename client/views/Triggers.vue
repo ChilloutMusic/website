@@ -72,7 +72,6 @@ export default {
       sortKey: 'dateAdded',
       reverse: true,
       searchString: '',
-      triggers: [],
       errors: [],
       isLoading: true,
       isMobile: false,
@@ -82,6 +81,9 @@ export default {
   },
 
   computed: {
+    triggers() {
+      return this.$store.state.triggers
+    },
     triggersTotal: function() {
       return this.triggers.length
     }
@@ -144,22 +146,26 @@ export default {
 
     emojify.run();
     emojify.setConfig({img_dir: 'https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/images/basic'})
-    axios.get(`https://api.woots.io/the-chillout-room/triggers`)
-    .then(response => {
-      if (this.isMobile) {
-        this.sortKey = 'keyword';
-        this.reverse = false;
-        this.triggers = _.orderBy(response.data.triggers, 'dateAdded', 'desc')
-      } else {
-        this.triggers = _.orderBy(response.data.triggers, 'dateAdded', 'desc')
-      }
-    })
-    .then(() => {
+    if (this.triggersTotal == 0) {
+      axios.get(`https://api.woots.io/the-chillout-room/triggers`)
+      .then(response => {
+        if (this.isMobile) {
+          this.sortKey = 'keyword';
+          this.reverse = false;
+          this.$store.commit('saveTriggers', _.orderBy(response.data.triggers, 'dateAdded', 'desc'))
+        } else {
+          this.$store.commit('saveTriggers', _.orderBy(response.data.triggers, 'dateAdded', 'desc'))
+        }
+      })
+      .then(() => {
+        this.isLoading = false
+      })
+      .catch(e => {
+        this.errors.push(e)
+      })
+    } else {
       this.isLoading = false
-    })
-    .catch(e => {
-      this.errors.push(e)
-    })
+    }
   },
 
   mounted() {
