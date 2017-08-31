@@ -96,7 +96,7 @@ export default {
     sortBy(sortKey) {
       this.reverse = !this.reverse
       this.sortKey = sortKey
-      this.triggers = _.orderBy(this.triggers, sortKey, this.reverse ? 'desc' : 'asc')
+      this.$store.commit('saveTriggers', _.orderBy(this.triggers, sortKey, this.reverse ? 'desc' : 'asc'))
     },
     filterBy(list, value) {
       return list.filter(function(item) {
