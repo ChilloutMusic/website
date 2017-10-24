@@ -20,6 +20,7 @@
           <h1 class="title" style="color: #000"><span class="icon is-large"><i class="fa fa-check" style="color: #00d1b2"></i></span>We feature <strong>electronic based</strong> chillout music:</h1>
           <div class="box">
             <ul>
+              <li>Atmospheric DnB</li>
               <li>Ambient</li>
               <li>Acid Jazz</li>
               <li>Chillhop</li>
@@ -38,7 +39,6 @@
               <li>Lofi</li>
               <li>Lounge</li>
               <li>Liquid DnB</li>
-              <li>Atmospheric DnB</li>
               <li>Microhouse</li>
               <li>Nu-Jazz</li>
               <li>Melodic Progressive</li>
@@ -53,17 +53,16 @@
           <div class="content">
             <blockquote>
               <ul>
-                <li>All tracks containing heavy or prolonged vocals are subject to evaluation and may be skipped.</li>
+                <li>We feature beat-focused rather than vocal-focused music. Tracks containing prolonged vocals are subject to evaluation and may be skipped.</li>
                 <li>Check room history before playing. Over-played tracks will be skipped.</li>
                 <li>Search play history with the bot command: <span>!plays author - title</span></li>
-                <li>Keep all tracks under 8 minutes.</li>
+                <li>Keep all tracks under 8 minutes. 10 minutes if the waitlist is 5 or below.</li>
               </ul>
             </blockquote>
           </div>
           <h1 class="title" style="color: #000"><span class="icon is-large"><i class="fa fa-times" style="color: red"></i></span>We do <strong>not</strong> play:</h1>
           <div class="box">
             <ul>
-              <li>EDM</li>
               <li>Acoustic</li>
               <li>Anime</li>
               <li>Alternative Pop</li>
@@ -74,7 +73,7 @@
               <li>Country</li>
               <li>Drumstep</li>
               <li>Dubstep</li>
-              <li>Electro</li>
+              <li>Electro House</li>
               <li>Folk</li>
               <li>Indie</li>
               <li>Indie Pop</li>
@@ -86,9 +85,10 @@
               <li>K-Pop</li>
               <li>J-Pop</li>
               <li>Jersey Club</li>
+              <li>Mainstream EDM</li>
               <li>Metal</li>
               <li>Nightcore</li>
-              <li>Orchestra</li>
+              <li>Orchestral</li>
               <li>Piano</li>
               <li>Pop</li>
               <li>Pop House</li>
@@ -100,8 +100,6 @@
               <li>Reggae</li>
               <li>Shoegaze</li>
               <li>Synthpop</li>
-              <li>Techno</li>
-              <li>Trap</li>
               <li>Tropical House</li>
               <li>Witch House</li>
               <li>Video Game Music</li>
