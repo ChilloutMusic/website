@@ -35,7 +35,7 @@
               <tr>
                 <th class="clickable column-keyword" @click="sortBy('keyword')">Trigger<span class="icon is-small" v-if="sortKey =='keyword'"><i class="fa" v-bind:class="reverse ? 'fa-level-down' : 'fa-level-up'"></i></span></th>
                 <th class="column-content">Content</th>
-                <th v-if="!isMobile" class="column-username">Created By</th>
+                <th v-if="!isMobile" class="clickable column-username" @click="sortBy('creator.username')">Created By<span class="icon is-small" v-if="sortKey =='creator.username'"><i class="fa" v-bind:class="reverse ? 'fa-level-down' : 'fa-level-up'"></i></span></th>
                 <th v-if="!isMobile" class="clickable column-usecount" @click="sortBy('useCount')">Times Used<span class="icon is-small" v-if="sortKey =='useCount'"><i class="fa" v-bind:class="reverse ? 'fa-level-down' : 'fa-level-up'"></i></span></th>
                 <th v-if="!isMobile" class="clickable column-created" @click="sortBy('dateAdded')">Created<span class="icon is-small" v-if="sortKey =='dateAdded'"><i class="fa" v-bind:class="reverse ? 'fa-level-down' : 'fa-level-up'"></i></span></th>
               </tr>
