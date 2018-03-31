@@ -45,7 +45,7 @@
         <div class="content">
           <div class="columns">
             <div class="column is-3">
-              <p>Chillout Music &copy; 2014-2017</p>
+              <p>Chillout Music &copy; 2014-2018</p>
               <p style="position: relative; left: -13px;">
                 <a class="facebook" href="https://www.facebook.com/chilloutmusic.fm" target="_blank"><span class="icon is-large"><i class="fa fa-facebook"></i></span></a>
                 <a class="twitter" href="https://www.twitter.com/chilloutmusica" target="_blank"><span class="icon is-large"><i class="fa fa-twitter"></i></span></a>
@@ -56,7 +56,7 @@
             </div>
             <div class="column is-2">
               <p>Join us on Discord:</p>
-              <a href="https://discord.gg/aXjAgeH" target="_blank">
+              <a href="https://discord.gg/DawPygN" target="_blank">
                 <img src="/img/social-join-discord-2.png" />
               </a>
             </div>
