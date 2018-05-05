@@ -28,8 +28,8 @@
             <div class="nav-item">
               <div class="field is-grouped">
                 <p class="control">
-                  <a class="button is-primary" href="https://plug.dj/the-chillout-room" target="_blank">
-                    <span>Join us on Plug.dj</span>
+                  <a class="button is-primary" href="https://www.dubtrack.fm/join/chilloutroom" target="_blank">
+                    <span>Join us on Dubtrack.fm</span>
                   </a>
                 </p>
               </div>
@@ -56,7 +56,7 @@
             </div>
             <div class="column is-2">
               <p>Join us on Discord:</p>
-              <a href="https://discord.gg/DawPygN" target="_blank">
+              <a href="https://discord.gg/44Mkdqh" target="_blank">
                 <img src="/img/social-join-discord-2.png" />
               </a>
             </div>

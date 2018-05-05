@@ -147,7 +147,7 @@ export default {
     emojify.run();
     emojify.setConfig({img_dir: 'https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/images/basic'})
     if (this.triggersTotal == 0) {
-      axios.get(`https://api.woots.io/the-chillout-room/triggers`)
+      axios.get(`https://braincomb.com/cm/triggers.json`)
       .then(response => {
         if (this.isMobile) {
           this.sortKey = 'keyword';

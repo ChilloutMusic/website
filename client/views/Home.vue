@@ -7,7 +7,7 @@
         </video>
       </div>
       <div class="container">
-        <h1 class="title text-on-motion"><span style="color: #FFF;">Chillout Music</span> is a Plug.dj community &mdash; a place to play music and videos with friends and others from around the world in a fun, real-time, community-driven environment.</h1>
+        <h1 class="title text-on-motion"><span style="color: #FFF;">Chillout Music</span> is a Dubtrack.fm community &mdash; a place to play music and videos with friends and others from around the world in a fun, real-time, community-driven environment.</h1>
       </div>
     </section>
 
@@ -25,11 +25,11 @@
                      <ol class="equaliser-column"><li class="colour-bar"></li></ol>
                      <ol class="equaliser-column"><li class="colour-bar"></li></ol>
                    </div>
-                  &nbsp;Currently playing on <a target="blank" href="https://plug.dj/the-chillout-room">Plug.dj</a></h1>
+                  &nbsp;Currently playing on <a target="blank" href="https://www.dubtrack.fm/join/chilloutroom">Dubtrack.fm</a></h1>
                 <h1 class="title" style="color:orange;font-size: 1.75rem;"><strong style="color:orange;">{{playing.dj}}</strong> is playing</h1>
                 <h2 class="subtitle" style="padding-bottom: 2rem;font-size:1.5rem">{{playing.author}} - {{playing.title}}&nbsp;
                   <a target="blank" :href="playing.link">
-                    <div class="tooltip"><img :src="playing.image"></img></div>
+                    <div class="tooltip"><img :src="playing.image" /></div>
                     <span class="icon is-small"><i class="fa fa-external-link"></i></span>
                   </a>
                 </h2>
@@ -58,7 +58,7 @@
       </div>
     </section>
 
-    <section class="hero landing-weekly-events">
+    <section class="hero landing-weekly-events" style="display: none">
       <div class="hero-body">
         <div class="container">
           <div class="columns">
@@ -109,9 +109,9 @@ export default {
   data() {
     return {
       isMobile: false,
-      playing: [],
-      played: [],
-      errors: []
+      //playing: [],
+      //played: [],
+      //errors: []
     }
   },
   created() {
@@ -119,14 +119,14 @@ export default {
       this.isMobile = true;
     }
 
-    axios.get(`https://braincomb.com/cm/playing.json`)
-    .then(response => {
-      this.playing = response.data.current
-      this.played = response.data.played
-    })
-    .catch(e => {
-      this.errors.push(e)
-    })
+    // axios.get(`https://braincomb.com/cm/playing.json`)
+    // .then(response => {
+    //   this.playing = response.data.current
+    //   this.played = response.data.played
+    // })
+    // .catch(e => {
+    //   this.errors.push(e)
+    // })
   }
 }
 </script>
