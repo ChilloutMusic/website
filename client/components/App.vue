@@ -28,8 +28,8 @@
             <div class="nav-item">
               <div class="field is-grouped">
                 <p class="control">
-                  <a class="button is-primary" href="https://www.dubtrack.fm/join/chilloutroom" target="_blank">
-                    <span>Join us on Dubtrack.fm</span>
+                  <a class="button is-primary" href="https://plug.dj/electronic-chillout-music" target="_blank">
+                    <span>Join us on Plug.dj</span>
                   </a>
                 </p>
               </div>
@@ -45,7 +45,7 @@
         <div class="content">
           <div class="columns">
             <div class="column is-3">
-              <p>Chillout Music &copy; 2014-2018</p>
+              <p>Chillout Music &copy; 2014-2019</p>
               <p style="position: relative; left: -13px;">
                 <a class="facebook" href="https://www.facebook.com/chilloutmusic.fm" target="_blank"><span class="icon is-large"><i class="fa fa-facebook"></i></span></a>
                 <a class="twitter" href="https://www.twitter.com/chilloutmusica" target="_blank"><span class="icon is-large"><i class="fa fa-twitter"></i></span></a>
