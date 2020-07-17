@@ -22,7 +22,7 @@
   "dependencies": {
     "axios": "^0.16.1",
     "babel-runtime": "^6.18.0",
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.19",
     "promise-polyfill": "^6.0.2",
     "vue": "^2.3.3",
     "vue-router": "^2.5.3",
